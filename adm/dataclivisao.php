@@ -1,0 +1,95 @@
+<?php
+	include('protect.php');
+	include('conect.php');
+	
+	$id = $_POST['visao'];
+	
+	
+	?>
+	<script src="javascript_cliente.js" type="text/javascript"></script>
+	<h3> Visão Portal </h3>
+	<hr>
+	<span class="resultadofixo" >
+	<?php
+	
+	$sql = "SELECT * FROM `cliente` WHERE `id` = $id";
+	
+	$rsd = mysql_query($sql);
+	//echo "entrou aqui";
+	while ($banco = mysql_fetch_assoc($rsd))
+	{
+	//echo "entrou aqui";
+	
+		$clientID = $banco["id"];
+		$clientNome = $banco["nome"];
+		$clientEmail = $banco["email"];
+		$clientCel = $banco["celular"];
+		$cleintSenha = $banco["senha"];
+		$clientRua = $banco["rua"];
+		$clientNumero = $banco["numero"];
+		$clientBairro = $banco["bairro"];	
+		$clientCep = $banco["cep"];
+		$clientLog = $banco["log"];
+		$clientBut = $banco["but"];
+		
+	?>
+     
+     <!-- Atuação  -->
+        <div class="row" style="background:white;padding:12px"> 
+			<div class="col-12" >
+				<span class="spandate"><?php echo $clientLog;?></span>
+			</div>
+            <div class="col-3">
+				<img class="img-responsive img-hover"  src="../clientes/<?php echo $clientID;?>/img/<?php echo $clientBut;?>" alt="" style="height:140px">
+            </div>
+            <div class="col-9" style="background:white;padding:12px" >
+				<h4><?php echo $clientNome;?></h4>
+				<p><?php echo $clientCel;?></p>
+            </div>
+        </div>
+        <!-- /.row -->
+		
+		 <?php
+	}
+	
+	?>
+	 <hr>
+	 <div class="container" style="background:white;padding:12px">
+			<h4> Arquivos enviados </h4>
+			<hr>
+			<div class="row" style="background:black;padding:12px;color:white">
+				<div class="col-8" >
+				<label>Nome</label>
+				</div>
+				<div class="col-4" >
+				<label>Download</label>
+				</div>
+				
+			</div>
+		</div>
+	<div class="container arquivos" style="background:white;padding-top:0px">
+	
+			<?php
+				$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $id AND `view` = 1" ;
+				$rsd = mysql_query($sql);
+				$cor = "white";
+			while ($banco = mysql_fetch_assoc($rsd)){
+					$cliID = $banco["id"];
+					$cliNome = $banco["nome"];
+					$cliCargo = $banco["cargo"];
+					$cliDocuent = $banco["documento"];
+					$cliView = $banco["view"];
+					$cliObs = $banco["obs"];
+					$client = $banco["cliente"];
+				?>
+			
+				<div class="row" style="padding:4px; background-color:<?php echo $cor; ?>;">
+					<div class="col-8"><?php echo $cliNome ?></div>
+					<div class="col-4"><a class="btn btn-outline-success" target="blank" href="../clientes/<?php echo $client ?>/doc/<?php echo $cliDocuent ?>">download </a></div>
+					
+				</div>
+				<?php
+					if($cor == "white"){$cor = "#fcfcfc";}else{$cor="white";}
+			}
+			?>
+	</div>

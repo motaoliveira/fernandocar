@@ -1,0 +1,24 @@
+﻿<?php
+	@include('../conect.php');
+
+	$sql = mysql_query("SELECT * FROM `configurar`");
+	
+	if(mysql_num_rows($sql) == 1){
+		while($configurar = mysql_fetch_array($sql)){
+		$corTopo = $configurar['corTopo'];
+		$corBase = $configurar['corBase'];
+		$logoTopo = $configurar['logoTopo'];
+		$logoPe = $configurar['logoPe'];
+		$imgBg = $configurar['imgBg'];
+		$tituloSite = $configurar['configTitulo'];
+		$textRodape = $configurar['configRodape'];
+		
+	//echo $configurar['corTopo'];
+		//echo $corTopo;
+		}
+		
+	}
+	
+	$tituloPainel = "Administrativo do Site";
+
+?>
