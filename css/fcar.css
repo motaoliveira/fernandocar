@@ -7,10 +7,10 @@ body{
       font-size: 18px;
 }
 .topo{
-      background-color:rgba(0,0,0,0.75);
+      background-color:rgba(0,0,0,0.60);
       width: 100vw;
       height: auto;
-      border: solid 1px grey;
+      border: solid 2px grey;
       position: fixed;
       z-index: 9999;
 }

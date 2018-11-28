@@ -1,26 +1,26 @@
 <?php
 	include('protect.php');
 	include("globais.php");
-	
+
 	$id = $_POST['value'];
-	
+
 	?>
 			<script src="delupfile.js"></script>
-		
-	
-	<h3> Upload de Arquivos </h3>
+
+
+	<h3>Envio de Documentos </h3>
 	<hr>
 	<span class="resultadofixo" >
 	<?php
-	
+
 	$sql = "SELECT * FROM `cliente` WHERE `id` = $id";
-	
+
 	$rsd = mysql_query($sql);
 	//echo "entrou aqui";
 	while ($banco = mysql_fetch_assoc($rsd))
 	{
 	//echo "entrou aqui";
-	
+
 		$clientID = $banco["id"];
 		$clientNome = $banco["nome"];
 		$clientEmail = $banco["email"];
@@ -28,15 +28,15 @@
 		$cleintSenha = $banco["senha"];
 		$clientRua = $banco["rua"];
 		$clientNumero = $banco["numero"];
-		$clientBairro = $banco["bairro"];	
+		$clientBairro = $banco["bairro"];
 		$clientCep = $banco["cep"];
 		$clientLog = $banco["log"];
 		$clientBut = $banco["but"];
-		
+
 	?>
-     
+
      <!-- Atuação  -->
-        <div class="row" style="background:white;padding:12px"> 
+        <div class="row" style="background:white;padding:12px">
 			<div class="col-12" >
 				<span class="spandate"><?php echo $clientLog;?></span>
 			</div>
@@ -45,18 +45,18 @@
             </div>
             <div class="col-9" style="background:white;padding:12px" >
 				<h4><?php echo $clientNome;?></h4>
-				<p><?php echo $clientCel;?></p>
+				<p><?php echo $clientNumero;?></p>
             </div>
         </div>
         <!-- /.row -->
 		 <hr>
 		 <div class="container" style="background:white;padding-top:12px;padding-botton:12px">
 			 <form class="form" class="row" action="sendfile.php" method="post" accept-charset="utf-8" enctype="multipart/form-data"  >
-					
+
 					<div class="col-12" ><label>Nome do Documento: </label><input type="text" class="form-control" name="Nome" ></div>
-					
+
 					<div class="col-12" ><label>Área: </label><input type="text" class="form-control" name="Cargo"></div>
-					
+
 					<input type="hidden" value="<?php echo $clientID;?>" name="IdCliente">
 					<div class="col-12" ><label>Escolha o Documento: </label><input type="file" name="upload" class="btn btn-default form-control"  id="uploadArquivos" style="border:1px solid #c0c0c0" multiple>
 					</div>
@@ -65,9 +65,9 @@
 			 </form>
 		 </div>
 		 <hr>
-		 
-		 
-		 
+
+
+
 	<?php } ?>
 		<div class="container" style="background:white;padding:12px">
 			<h4> Arquivos enviados </h4>
@@ -98,7 +98,7 @@
 					$cliObs = $banco["obs"];
 					$client = $banco["cliente"];
 				?>
-			
+
 				<div class="row" style="padding:4px; background-color:<?php echo $cor; ?>;">
 					<div class="col-8"><?php echo $cliNome ?></div>
 					<div class="col-2"><a class="btn btn-outline-success" target="blank" href="../clientes/<?php echo $client ?>/doc/<?php echo $cliDocuent ?>">download </a></div>

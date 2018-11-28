@@ -1,74 +1,66 @@
-<?php
-	ob_start(); 
-	
-	session_start();
-	
- 	include('globais.php');
- ?>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+		<!-- MetaTag Facebook -->
+  <meta property="fb:app_id" content="1130302130402175" />
+	<meta property="og:url" content="http://www.fcaremplacamentos.com.br"/>
+	<meta property="og:type" content="cause" />
+	<meta property="og:title" content="Limpchick - Diaristas" />
+	<meta property="og:description" content="Serviços de Faxinas, Limpezas, Organizaçoes e outros serviços que sua comodidade. Tudo a um clique no site da Limpchick, confira..." />
+	<meta property="og:image" content="http://www.voxa.com.br/images/fcaremplacamentos.jpg" />
+	<meta property="og:site_name" content="Serviços Empresarial e Residencial"/>
+		<!-- Fim da MetaTag Facebook -->
 
+		<!-- Início de MetaTag Twiter -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@Limpchick" />
+	<meta name="twitter:creator" content="@Limpchick" />
+	<meta name="twitter:url" content="http://www.fcaremplacamentos.com.br" />
+	<meta name="twitter:title" content="Limpchick - Diaristas" />
+	<meta name="twitter:description" content="Serviços de Faxinas, Limpezas, Organizaçoes e outros serviços que sua comodidade. Tudo a um clique no site da Limpchick, confira..." />
+	<meta name="twitter:image" content="http://www.fcaremplacamentos.com.br/images/fcaremplacamentos.jpg" />
+		<!-- Fim de MetaTag Twiter -->
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/jquery.mobile.min.css">
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<meta http-equiv="Content-Type"  content="text/html; charset=utf-8" />
+	<title>Fcar</title>
+	<link rel="stylesheet" href="../css/fcar.css">
+	<?php //include_once("analytics.php") ?>
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/signin.css">
+	<link rel="stylesheet" href="../css/bootstrap-datetimepicker.css">
 
- <script src="../js/processing.js"></script>
-<link rel="stylesheet" href="../css/all.css">
-<script src="../js/jquery-1.11.1.min.js"></script>
-<script src="../js/jquery.mobile.min.js"></script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script src="../js/popper.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script src="../js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+	<script src="../js/bootstrap-datepicker.pt-BR.js" type="text/javascript"></script>
 
-<title>Nix - Web$hop </title>
+	<link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="shortcut icon" href="favicon.png" />
+		<link rel="stylesheet" href="css/fcar.css">
+
 </head>
-<style>
-body{
-    background: -webkit-canvas(mybackground);
-  }
-  
-  </style>
 <body>
-		
-  
-<!-- Primeira página !-->
-<div data-role="page" style="background-image:url(../img/bg.png)">	
 
-	<div role="main" class="ui-content" style="padding:0" >
-	<div style="width:auto;height:180px;background-color:<?php echo $corMenu ?>;border-bottom:rgba(218,218,218,0.75) 5px solid;">
-			
-			<div style="width:400px;height:180px;margin-left:auto;margin-right:auto;margin-top:auto;margin-bottom:0px;position:relative;background-color:rgba(20,20,20,.09)"><img src="../img/logonix-ent.png" width="400" height="180" style="border:0px;"  alt=""/>
-            </div>
-        </div>
-
-            <form action="logar.php" method="post" target="_top" name="form" id="form">
-            
-            <div id="nome"  style="margin-left:auto;margin-right:auto;width:400px;border:#FFFFFF 0px dashed; padding-top:10px;background-color: rgba(200,200,200,0.09); ">
-                <table width="340" border="0" align="center">
-                    <tr>
-                        <td><label style="font-size:12px;font-family:Verdana, Geneva, sans-serif">Login:</label>        </td>
-                        <td><input name="login" type="text" id="login" size="20" width="120" /></td>
-                    </tr>
-                    <tr>
-                        <td><label style="font-size:12px;font-family:Verdana, Geneva, sans-serif">Senha:</label></td>
-                        <td><input name="senha" type="password" id="senha" size="20" width="120"/></td>
-                    </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><span  style="width:200px;padding-left:100px;">
-                        <input  class="btn btn-default" type="submit" name="button" id="button" value="ENTRAR"  />
-                        </span></td>
-                    </tr>
-                </table>
-            </div>
-            
-            <div id="nome" style="margin-left:auto;margin-right:auto;width:300px;text-align:center;border:0px #000 solid;padding:20px;"><br><a  class="btn btn-default btn-sm" href="http://www.voxa.com.br/nix" target="_blank" alt="Contato 55 75 91429009 - Sérgio Mota">Voxa Design</a> <?php // print_r($_SESSION); ?><br>
-			
-			</div>
-			
-            </form>
-			
-	</div>
-  
-</div>
+  <form action="logar.php" class="form-signin" method="post" target="_top" name="form" id="form">
+    <img class="mb-4" src="../image/logofcar.png" alt=""  height="210">
+    <h1 class="h3 mb-3 font-weight-normal"></h1>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="inputEmail" id="inputEmail" class="form-control  bg-dark" placeholder="Email address" required autofocus>
+    <label for="inputPassword"  class="sr-only">Password</label>
+    <input type="password" name="inputPassword" id="inputPassword" class="form-control bg-dark" placeholder="Password" required>
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+    </div>
+    <button class="btn btn-lg btn-dark btn-block" name="button" id="button" value="ENTRAR" type="submit">Sign in</button>
+    <p class="mt-5 mb-3 text-muted">&copy; www.voxa.com.br</p>
+  </form>
 
 </body>
 </html>

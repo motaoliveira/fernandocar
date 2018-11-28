@@ -10,12 +10,17 @@
 <title>Ibantec Web</title>
 <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.js"></script>
 		<!-- Popper JS -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="../js/bootstrap.min.js" ></script>
+		<script src="../js/bootstrap.js" ></script>
 
+		<script src="../js/popper.min.js" ></script>
+		<script src="../js/popper.js" ></script>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="../css/bootstrap.min.css" >
+		<link rel="stylesheet" href="../css/bootstrap.css" >
 <!--link rel="stylesheet" href="../css/font-awesome.min.css"-->
 <!--link rel="stylesheet" href="../css/style.css"-->
 	<link rel="icon" href="favicon.ico" type="image/ico" />
@@ -227,7 +232,7 @@
 				<img style="" src="../images/logonix.png"  alt=""> </div>
 			<div class="col-6" style="border:0px rgba(120,120,120,1.00) solid;height:120px;margin-left:auto;margin-right:auto"></div>
 			<div class="col-3" style="height:120px;margin-left:auto;margin-right:auto;padding-top:10px;">
-				<a href="sair.php" class=" btn btn-secondary btn-sm"	 " style="float:right;margin-right:10px">Logoff</a>
+				<a href="sair.php" class=" btn btn-outline-secondary btn-sm" style="float:right;margin-right:10px">Logoff</a>
 			</div>
 		</div>
 	</div>
@@ -235,8 +240,8 @@
 
 
 <div class="container" style="margin-top:8px;">
-	<div class="row">
-		<div class="col-3" >
+	<div class="row" style="border:0px solid red">
+		<div class="col-3" style="border:0px solid red">
 			<button type="button" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" id="init" >
 			  Principal  <i style="float:right"  class="fa fa-caret-right" aria-hidden="true"></i>
 			</button>
@@ -244,127 +249,134 @@
 			  Configurações  <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
 			</button>
 			<div class="collapse" id="collapseconfig">
-							<a class="btn btn-block btn-secondary" id="configCor" style="margin-top:5px;"   title="Cores do Topo / Rodapé / Menu"><i class="fa fa-cog" aria-hidden="true"></i> Cores</a>
-							<a class="btn btn-block btn-secondary"  style="display:none" id="configLogos" title="Logo do Topo / Rodapé"> Logos</a>
-							<a class="btn btn-block btn-secondary" style="display:none" id="configBg" title="Modifique cor / imagem">Background</a>
-							<a class="btn btn-block btn-secondary" style="display:none" id="configTitulo" title="Título do site / Texto do Rodapé">Titulo / Rodapé</a>
+							<a class="btn btn-block btn-outline-secondary" id="configCor" style="margin-top:5px;"   title="Cores do Topo / Rodapé / Menu"><i class="fa fa-cog" aria-hidden="true"></i> Cores</a>
+							<a class="btn btn-block btn-outline-secondary"  style="display:none" id="configLogos" title="Logo do Topo / Rodapé"> Logos</a>
+							<a class="btn btn-block btn-outline-secondary" style="display:none" id="configBg" title="Modifique cor / imagem">Background</a>
+							<a class="btn btn-block btn-outline-secondary" style="display:none" id="configTitulo" title="Título do site / Texto do Rodapé">Titulo / Rodapé</a>
 			</div>
 
 			<!--<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse"  data-target="#collapsemenu" aria-expanded="false" aria-controls="collapsemenu">
 			  Categorias / Clientes
 			</button>
 			<div class="collapse" id="collapsemenu" >
-							<a class="btn btn-block btn-secondary" id="categoria" style="margin-top:5px;">Categorias</a>
-							<a class="btn btn-block btn-secondary" id="familia">Famílias</a>
-							<a class="btn btn-block btn-secondary" id="produtos">Clientes</a>
+							<a class="btn btn-block btn-outline-secondary" id="categoria" style="margin-top:5px;">Categorias</a>
+							<a class="btn btn-block btn-outline-secondary" id="familia">Famílias</a>
+							<a class="btn btn-block btn-outline-secondary" id="produtos">Clientes</a>
 			</div>-->
-            <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapsebaner" aria-expanded="false" aria-controls="collapsebaner">
+
+			<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapsebaner" aria-expanded="false" aria-controls="collapsebaner">
 			  Banners          <i style="float:right"  class="fa fa-caret-down" aria-hidden="true"></i>
 			</button>
+
 			<div class="collapse" id="collapsebaner">
-							<a class="btn btn-block btn-secondary" id="carousel" style="margin-top:5px;"><i class="fa fa-bars" aria-hidden="true"></i>  Premium</a>
-							<!--a class="btn btn-block btn-secondary" id="banerfixo"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Home</a>
-                            <a class="btn btn-block btn-secondary" id="fixointerno"><i class="fa fa-credit-card" aria-hidden="true"></i>  Interno</a>
-							<a class="btn btn-block btn-secondary" id="lateral">Lateral</a-->
+							<a class="btn btn-block btn-outline-secondary" id="carousel" style="margin-top:5px;"><i class="fa fa-bars" aria-hidden="true"></i>  Premium</a>
+							<!--a class="btn btn-block btn-outline-secondary" id="banerfixo"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>  Home</a>
+                            <a class="btn btn-block btn-outline-secondary" id="fixointerno"><i class="fa fa-credit-card" aria-hidden="true"></i>  Interno</a>
+							<a class="btn btn-block btn-outline-secondary" id="lateral">Lateral</a-->
 			</div>
+
 			<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapseclientes" aria-expanded="false" aria-controls="collapseclientes">
-			 Portal do Cliente          <i style="float:right"  class="fa fa-caret-down" aria-hidden="true"></i>
+			 Atendimento          <i style="float:right"  class="fa fa-caret-down" aria-hidden="true"></i>
 		 </button>
+
 		 <div class="collapse" id="collapseclientes">
-						 <a class="btn btn-block btn-secondary" id="clientes" style="margin-top:5px;"> Clientes</a>
-						 <a class="btn btn-block btn-secondary" id="cadastrar" style="margin-top:5px;"> Cadastrar</a>
-						 <a class="btn btn-block btn-secondary" id="senha" style="margin-top:5px;"> Esqueceu Senha</a>
+						 <a class="btn btn-block btn-outline-secondary" id="clientes" style="margin-top:5px;"> Clientes</a>
+						 <a class="btn btn-block btn-outline-secondary" id="cadastrar" style="margin-top:5px;"> Cadastrar</a>
+						 <a class="btn btn-block btn-outline-secondary" id="senha" style="margin-top:5px;"> Esqueceu Senha</a>
 		 </div>
+
 		 <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapsealuno" aria-expanded="false" aria-controls="collapsealuno">
 			Portal do Aluno          <i style="float:right"  class="fa fa-caret-down" aria-hidden="true"></i>
 		</button>
+
 		<div class="collapse" id="collapsealuno">
-						<a class="btn btn-block btn-secondary" id="aluno" style="margin-top:5px;"> Alunos</a>
-						<a class="btn btn-block btn-secondary" id="alcadastrar" style="margin-top:5px;"> Cadastrar</a>
-						<a class="btn btn-block btn-secondary" id="alsenha" style="margin-top:5px;"> Esqueceu Senha</a>
+						<a class="btn btn-block btn-outline-secondary" id="aluno" style="margin-top:5px;"> Alunos</a>
+						<a class="btn btn-block btn-outline-secondary" id="alcadastrar" style="margin-top:5px;"> Cadastrar</a>
+						<a class="btn btn-block btn-outline-secondary" id="alsenha" style="margin-top:5px;"> Esqueceu Senha</a>
 		</div>
-            <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#quemsomos" aria-expanded="false" aria-controls="quemsomos">
-			  Quem Somos        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="quemsomos">
-							<a class="btn btn-block btn-secondary" id="quemedite" style="margin-top:5px;"><i class="fa fa-refresh" aria-hidden="true"></i>  Atualizar</a>
-			</div>
 
-			<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapseatuacao" aria-expanded="false" aria-controls="collapseatuacao">
-			  Serviços        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="collapseatuacao">
-							<a class="btn btn-block btn-secondary" id="atuaInserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
-							<a class="btn btn-block btn-secondary" id="atuaIeditar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
+    <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#quemsomos" aria-expanded="false" aria-controls="quemsomos">
+		  Quem Somos        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
 
-			</div>
+		<div class="collapse" id="quemsomos">
+						<a class="btn btn-block btn-outline-secondary" id="quemedite" style="margin-top:5px;"><i class="fa fa-refresh" aria-hidden="true"></i>  Atualizar</a>
+		</div>
 
-            <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#projetos" aria-expanded="false" aria-controls="projetos">
-			  Cursos      <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="projetos">
-							<a class="btn btn-block btn-secondary" id="projinserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
-							<a class="btn btn-block btn-secondary" id="projeditar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
-
-
-			</div>
-
-            <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapsefotos" aria-expanded="false" aria-controls="collapsefotos">
-			  Galeria de Imagens        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="collapsefotos">
-							<a class="btn btn-block btn-secondary" id="galeriainserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Criar</a>
-							<a class="btn btn-block btn-secondary" id="galeriaeditar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
-			</div>
-
-             <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#parceiros" aria-expanded="false" aria-controls="parceiros">
-			  Clientes        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="parceiros">
-							<a class="btn btn-block btn-secondary" id="parceriainserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
-							<a class="btn btn-block btn-secondary" id="parceriaeditar"><i class="fa fa-trash" aria-hidden="true"></i> Deletar</a>
-			</div>
-			<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#cliente" aria-expanded="false" aria-controls="cliente">
-			  Parceria        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="cliente">
-							<a class="btn btn-block btn-secondary" id="clienteinserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
-							<a class="btn btn-block btn-secondary" id="clienteeditar"><i class="fa fa-trash" aria-hidden="true"></i> Deletar</a>
-			</div>
-
-			<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#curriculo" aria-expanded="false" aria-controls="curriculo">
-			  Currículos        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="curriculo">
-							<a class="btn btn-block btn-secondary" id="curriculos" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Visualizar</a>
-
-			</div>
-
-            <button style="margin-top:5px;display:none;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#email" aria-expanded="false" aria-controls="email">
-			  Email        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
-			</button>
-			<div class="collapse" id="email" >
-							<a class="btn btn-block btn-secondary" id="emails" style="margin-top:5px;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Emails Cadastrados</a>
-
-			</div>
+		<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapseatuacao" aria-expanded="false" aria-controls="collapseatuacao">
+		  Serviços        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="collapseatuacao">
+						<a class="btn btn-block btn-outline-secondary" id="atuaInserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
+						<a class="btn btn-block btn-outline-secondary" id="atuaIeditar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 
 		</div>
 
-		<div class="col-9" id="conteudoAdm" style="padding-left:5px;padding-right:0px;">
+    <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#projetos" aria-expanded="false" aria-controls="projetos">
+		  Cursos      <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="projetos">
+						<a class="btn btn-block btn-outline-secondary" id="projinserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
+						<a class="btn btn-block btn-outline-secondary" id="projeditar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
+
+
+		</div>
+
+    <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#collapsefotos" aria-expanded="false" aria-controls="collapsefotos">
+		  Galeria de Imagens        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="collapsefotos">
+						<a class="btn btn-block btn-outline-secondary" id="galeriainserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Criar</a>
+						<a class="btn btn-block btn-outline-secondary" id="galeriaeditar"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
+		</div>
+
+    <button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#parceiros" aria-expanded="false" aria-controls="parceiros">
+		  Clientes        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="parceiros">
+						<a class="btn btn-block btn-outline-secondary" id="parceriainserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
+						<a class="btn btn-block btn-outline-secondary" id="parceriaeditar"><i class="fa fa-trash" aria-hidden="true"></i> Deletar</a>
+		</div>
+
+		<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#cliente" aria-expanded="false" aria-controls="cliente">
+		  Parceria        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="cliente">
+						<a class="btn btn-block btn-outline-secondary" id="clienteinserir" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Inserir</a>
+						<a class="btn btn-block btn-outline-secondary" id="clienteeditar"><i class="fa fa-trash" aria-hidden="true"></i> Deletar</a>
+		</div>
+
+		<button style="margin-top:5px;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#curriculo" aria-expanded="false" aria-controls="curriculo">
+		  Currículos        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="curriculo">
+						<a class="btn btn-block btn-outline-secondary" id="curriculos" style="margin-top:5px;"><i class="fa fa-pencil" aria-hidden="true"></i> Visualizar</a>
+		</div>
+
+    <button style="margin-top:5px;display:none;" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" type="button" data-toggle="collapse" data-target="#email" aria-expanded="false" aria-controls="email">
+		  Email        <i style="float:right" class="fa fa-caret-down" aria-hidden="true"></i>
+		</button>
+		<div class="collapse" id="email" >
+						<a class="btn btn-block btn-outline-secondary" id="emails" style="margin-top:5px;"><i class="fa fa-envelope-o" aria-hidden="true"></i> Emails Cadastrados</a>
+		</div>
+
+		</div>
+
+		<div class="col-9" id="conteudoAdm" style="border:0px solid red">
 		</div>
         <div class="hiden-xs col-3" ></div>
         <div class="col-9" id="conteudoAdm2" style="background-color:;border:0px dashed rgba(0,0,0,1);padding:2px;margin-top:2px" >
 		</div>
 	</div>
 </div>
-<div style="width:auto;height:10px;border:0px #000 dashed"></div>
+<div style="width:auto;height:40px;border:0px #000 dashed"></div>
 
 <footer style="border-top:2px solid <?php echo $corTopo ?>;width:auto;height:auto;background-color:;padding-top:20px;">
 
 	<div class="container" style="border:0px #000000 dashed;margin-top:0px;">
 		<div style="border:0px #000 DASHED;margin-top:5px;float:right;text-align:right;">
-			Desenvolvido por <a  class="btn btn-secondary btn-sm" href="http://www.voxa.com.br/" target="_blank">Studium Voxa</a><br>
-			Contato 55 75 91429009 - Sérgio Mota
+			Desenvolvido por <a  class="btn btn-outline-secondary btn-sm" href="http://www.voxa.com.br/" target="_blank">Studium Voxa</a>
+			<br /> 	<br />
 		</div>
 	</div>
     <?php //print_r($_SESSION); ?>

@@ -2,12 +2,12 @@
 <?php
 	//include('conect.php');
 	include('globais.php');
-	
+
 	$_SESSION['line1'] = "0";
-	
+
 		/*echo $corMenuAdm;*/ if($corMenuAdm=="secundary"){
 		$corMenuAdm = "default";
-	} 
+	}
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="tinymce/js/tinymce/tinymce.js"></script>
@@ -47,20 +47,20 @@ tinymce.init({
 			//location.reload();
 		});
 	});
-	</script>	
+	</script>
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Clientes</li>
           <li class="breadcrumb-item">Editar</li>
-         
+
     </ol>
 	<div class="container"  >
-		<div class="row">	
+		<div class="row">
 			<div class="card w-100">
 						<h3 class="card-header">Retirar Cliente</h3>
 				<div class="card-block">
-				
+
 					<div class="row" >
-						<?php 
+						<?php
 							$categori ="SELECT * FROM `parceria` ORDER BY `parceria`.`id` DESC";
 							$actioQuery = mysql_query($categori);
 							while($act = mysql_fetch_array($actioQuery)){
@@ -68,13 +68,13 @@ tinymce.init({
 								$imgpa = $act['img'];
 								$titulopa = $act['titulo'];
 								$descripa = $act['descri'];
-						?>	
+						?>
 						<div class="col-3" style="text-align:center">
 							<img class="img-thumbnail" src="../parceria/<?php echo $imgpa; ?>"  />
 							<p  style="font-size:14px;"><strong><?php echo $titulopa; ?></strong>
-							
-							<a class="btn btn-secondary btn-sm btn-block dlt" id="<?php echo $idpa; ?>">
-								<i class="fa fa-trash" aria-hidden="true"></i> Delete</a>		</p>	
+
+							<a class="btn btn-<?php echo $corMenuAdm; ?> btn-sm btn-block dlt" id="<?php echo $idpa; ?>">
+								<i class="fa fa-trash" aria-hidden="true"></i> Delete</a>		</p>
 						</div>
 						<hr>
 						<?php } ?>
@@ -82,4 +82,4 @@ tinymce.init({
 				</div>
 			</div>
 		</div>
-	</div>         	
+	</div>

@@ -2,10 +2,10 @@
 <?php
 	//include('conect.php');
 	include('globais.php');
-	
+
 		/*echo $corMenuAdm;*/ if($corMenuAdm=="secundary"){
 		$corMenuAdm = "default";
-	} 
+	}
 ?>
 
 <script src="tinymce/js/tinymce/tinymce.js"></script>
@@ -29,11 +29,11 @@ tinymce.init({
 
 <script>
 $(document).ready(function(){
-	
+
 	 $("#sendAtua").click(function()
 	 	{
-		var tinyMce = tinyMCE.get('mensagem').getContent();	
-		var titulo = $('#titulo').val();		
+		var tinyMce = tinyMCE.get('mensagem').getContent();
+		var titulo = $('#titulo').val();
 		var descricao = $('#descricao').val();
 		var mensage = $('#tex').val();
 		var arq2 = $('#exemplo').val();
@@ -46,37 +46,37 @@ $(document).ready(function(){
 						 // });
 			alert('Tudo preenchido corretamente');
 		}
-	
+
 	});
-	
-	
-	
+
+
+
 	  });
 </script>
 
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Serviços</li>
           <li class="breadcrumb-item active">Inserir</li>
-         
+
     </ol>
 
 <div class="container">
-	<div class="row">				
+	<div class="row">
    <div class="card w-100">
-	
+
 	<h3 class="card-header">Inserir Serviço</h3>
-    
+
     <div class="card-block">
-            
-                
+
+
     <div class="col-12">
 
     <form role="form" action="atuacao_ins.php" enctype="multipart/form-data" method="post">
-    
+
     <div class="col-12 form-group" style="border:0px #000 dashed;">
         <input class="form-control theme-secondary" type="text" id="titulo"  placeholder="Titulo " name="titulo" value="">
     </div>
-    
+
         <div class="col-12">
             <div class="form-group">
                 <input type="file" name="exemplo" class="btn btn-default btn-block "  id="arq">
@@ -85,25 +85,25 @@ $(document).ready(function(){
         <div class="col-12"> <p>Imagem: 400 x 227 px</p></div>
        <div class="col-12   form-group">
             <input class="form-control theme-secondary" type="text" id="descricao"  placeholder="Descrição" name="descricao" value="">
-    
+
         </div>
         <div class="col-12" style="height:auto;">
         <textarea name="tex" id="tex" cols="90" rows="12"></textarea>
         </div>
-        
+
         <div class="col-12">
         <br />
             <div class="form-group" >
-                <button type="submit" class="btn btn-primary" id="sendAtua">
+                <button type="submit" class="btn btn-<?php echo $corMenuAdm; ?>" id="sendAtua">
                     <span class="glyphicon glyphicon-ok"></span> Aplicar
                 </button>
             </div>
         </div>
-    
+
     </form>
 
     </div>
-       
+
     </div>
 </div>
 </div>

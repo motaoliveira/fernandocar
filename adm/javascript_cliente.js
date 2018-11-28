@@ -38,7 +38,7 @@ $(".edtaluno").click(function(){
 				},
 				function(data, status){
 				});
-				$.post("aluno_edite.php",
+$.post("aluno_edite.php",
 					{
 						id:id
 					},
@@ -71,10 +71,10 @@ $(".edtaluno").click(function(){
 					},
 					function(data, status){
 					//alert(data);
-					//	$(".resultadofixo").html(data);
-					//$('#paging_button').hide();
+					$("#links").html(data);
+					$('#paging_button').hide();
 					});
-
+/*
 			$.post("cliente_edite.php",
 						{
 							id:id
@@ -83,7 +83,7 @@ $(".edtaluno").click(function(){
 							//alert(data);
 							$("#links").load("cliente_edite.php");
 							$('#paging_button').hide();
-						});
+						}); */
 		});
 /*
 				$(".buscaluno").click(function(){
@@ -123,7 +123,7 @@ $(".edtaluno").click(function(){
 			}
 		});
 
-		$(".upload").click(function(){
+	$(".upload").click(function(){
 		 var value = $(this).val();
 		$('#paging_button').hide();
 		$.post("datacliupload.php",

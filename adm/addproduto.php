@@ -2,22 +2,22 @@
 	 session_start();
 	 include('protect.php');
 	 include('globais.php');
-	
+
 	print_r($_POST);
-	
+
 	$c = $_POST["c"];
 	$f = $_POST["f"];
-	
-	
+
+
 	$sqline = "SELECT * FROM `prodconfig` WHERE `prodCat` = $c AND `prodSub` = $f";
-	
+
 	$sqlConsult = mysql_query($sqline);
-	
+
 	echo $c;
 	echo $f;
-	
+
 	while($confProd = mysql_fetch_array($sqlConsult)){
-		
+
 		$prodCat = $confProd['prodCat'];
 		$prodSub = $confProd['prodSub'];
 		$prodNome = $confProd['prodNome'];
@@ -46,12 +46,12 @@
 		$prodView = $confProd['prodView'];
 		$prodComp = $confProd['prodComp'];
 	}
-	
+
  ?>
- 
- 
+
+
  <form>
- 
+
 			<?php
 						if(@!$prodNome){}else{
 			?>
@@ -60,12 +60,12 @@
 								<div class="form-group">
 									<input class="form-control theme-secondary " type="text" id="newName"  placeholder="Nome do Produto">
 								</div>
-							
-						</div>	
+
+						</div>
 						<?php
 						}
 						?>
-						
+
 			<?php
 						if(@!$prodImage0){}else{
 			?>
@@ -87,7 +87,7 @@
 						</div>
 						<?php
 						}
-						?>	
+						?>
 			<?php
 						if(@!$prodImage2){}else{
 			?>
@@ -98,7 +98,7 @@
 						</div>
 						<?php
 						}
-						?>	
+						?>
 			<?php
 						if(@!$prodImage3){}else{
 			?>
@@ -308,13 +308,13 @@
 						<?php
 						}
 						?>
-						
+
 						<div class="col-md-12  col-lg-12 col-sm-12 col-xs-12" >
 								<div class="form-group">
-									<button type="submit" class="btn btn-primary btn-block" id="sendProduto" >
+									<button type="submit" class="btn btn-<?php echo $corMenuAdm; ?> btn-block" id="sendProduto" >
 										<span class="glyphicon glyphicon-ok"></span> Aplicar
 									</button>
 								</div>
 						</div>
-	
+
 </form>

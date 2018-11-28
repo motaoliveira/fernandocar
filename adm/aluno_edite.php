@@ -151,7 +151,7 @@ $(document).ready(function(){
 			<div class="col-md-12  col-lg-12 col-sm-12 col-xs-12">
 			<br />
 				<div class="form-group" >
-					<button type="submit" class="btn btn-block btn-primary" id="sendAtua" name="sendAtua">
+					<button type="submit" class="btn btn-block btn-<?php echo $corMenuAdm; ?>" id="sendAtua" name="sendAtua">
 						<span class="glyphicon glyphicon-ok"></span> Enviar
 					</button>
 				</div>

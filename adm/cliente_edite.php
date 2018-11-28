@@ -90,7 +90,7 @@ $(document).ready(function(){
 		<form role="form" action="cliente_update.php" enctype="multipart/form-data" method="post">
 
 		<input name="hide" type="hidden" value="<?php echo $clientID; ?>" />
-		<input name="nome" type="hidden" value="<?php echo $clientNome; ?>" />
+		<!--input name="nome" type="hidden" value="<?php echo $clientNome; ?>" /-->
 
 		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8 form-group" style="border:0px #000 dashed;">
 			<h3> <?php echo $clientNome; ?> </h3>
@@ -105,13 +105,13 @@ $(document).ready(function(){
 			<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4"> <p>Imagem: 400 x 450 px</p></div>
 			<div class="col-md-12  col-lg-12 col-sm-12 col-xs-12" >
 			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-			<p>Celular</p>
+			<p>Cliente</p>
 			</div>
 			<div class="col-md-10 col-lg-10 col-sm-10 col-xs-10">
-			<input class="form-control theme-secondary" type="text" id="cel" name="cel"  placeholder="" name="titulo" value="<?php echo $clientCel; ?>" >
+			<input class="form-control theme-secondary" type="text" id="cliente" name="cliente"  placeholder="" name="cliente" value="<?php echo $clientNome; ?>" >
 			<br>
 			</div>
-			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+			<!--div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
 			<p>Email</p>
 			</div>
 			<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10" >
@@ -134,12 +134,12 @@ $(document).ready(function(){
 			</div>
 			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
 			<p>Número</p>
-			</div>
+		</div-->
 			<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10" >
 			<input class="form-control theme-secondary" type="text" id="numero" name="numero" placeholder="Número"  value="<?php echo $clientNumero; ?>" >
 			<br>
 			</div>
-			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+			<!--div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
 			<p>Cidade:</p>
 			</div>
 			<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10" >
@@ -152,7 +152,7 @@ $(document).ready(function(){
 			<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10" >
 			<input class="form-control theme-secondary" type="text" id="bairro" name="bairro"  placeholder="Bairro" value="<?php echo $clientBairro; ?>" >
 			<br>
-			</div>
+		</div-->
 
 			<div class="col-md-12  col-lg-12 col-sm-12 col-xs-12">
 			<br />

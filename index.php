@@ -47,12 +47,12 @@
 
 	<div class="topo margin-carousel">
 		<nav class="navbar navbar-expand-lg navbar-dark container pad" >
-			<div class="abrand" >
+			<div class="abrand"  >
 		  	<a class="navbar-brand" href="#">
             <img class="" src="image/logofcar.png">
         </a>
 			</div>
-		  <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		  <button class="navbar-toggler float-right navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarNavDropdown">

@@ -1,20 +1,20 @@
-<?php 
+<?php
 session_start();
 include("globais.php");
 //$data = $date[0].$date[1].$date[2].$date[3].$date[4].$date[5].$date[6].$date[7].$date[8].$date[9];
 //$hora = $date[11].$date[12].$date[13].$date[14].$date[15];
 print_r ($_POST);
-//print_r ($_FILES); 
+//print_r ($_FILES);
 	$id = $_POST['hide'];
-	$nome = $_POST['nome'];
-	$cel = $_POST['cel'];
-	$email = $_POST['email'];
-	$senha = $_POST['senha'];
-	$rua = $_POST['rua'];
+	$nome = $_POST['cliente'];
+	$cel = 1;
+	$email = 1;
+	$senha = 1;
+	$rua = 1;
 	$numero = $_POST['numero'];
-	$cep = $_POST['cep'];
-	$bairro = $_POST['bairro'];
-	
+	$cep = 1;
+	$bairro = 1;
+
 	$dir_upload = "../clientes/$id/img/";
 	$max_size = 2000000;
 	$titulo = $_POST['titulo'];
@@ -38,11 +38,11 @@ print_r ($_POST);
 	if ($_FILES['exemplo']['size'] <= $max_size && $_FILES['exemplo']['size'] > 0) {
 		$new_name = $_FILES['exemplo']['name'];
 		$copied = copy($_FILES['exemplo']['tmp_name'], $dir_upload . $new_name);
-		
+
 		if ($copied) {
 			$message = 'Ok!';
 			header( "location: pagina_principal.php" );
-	
+
 		} else {
 			$message = 'Erro!';
 		}
