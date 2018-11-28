@@ -2,30 +2,31 @@
 	include('protect.php');
 	include('globais.php');
 	//include('conect.php');
-
 	//print_r($_SESSION);
-
  ?>
 <html><head>
 <title>Ibantec Web</title>
 <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<script src="../js/jquery.min.js"></script>
 		<script src="../js/jquery.js"></script>
+
 		<!-- Popper JS -->
 		<script src="../js/bootstrap.min.js" ></script>
 		<script src="../js/bootstrap.js" ></script>
-
 		<script src="../js/popper.min.js" ></script>
 		<script src="../js/popper.js" ></script>
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="../css/bootstrap.min.css" >
 		<link rel="stylesheet" href="../css/bootstrap.css" >
-<!--link rel="stylesheet" href="../css/font-awesome.min.css"-->
-<!--link rel="stylesheet" href="../css/style.css"-->
-	<link rel="icon" href="favicon.ico" type="image/ico" />
+		<!--link rel="stylesheet" href="../css/font-awesome.min.css"-->
+		<!--link rel="stylesheet" href="../css/style.css"-->
+		<link rel="icon" href="favicon.ico" type="image/ico" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="stylesheet" href="../css/painel.css">
+
 	<script>
 	jQuery(document).ready(function(){
 				var conteudo = jQuery('#conteudoAdm');
@@ -362,7 +363,7 @@
 
 		</div>
 
-		<div class="col-9" id="conteudoAdm" style="border:0px solid red">
+		<div class="col-9" id="conteudoAdm" style="border:0px solid red;padding-top:-20px;">
 		</div>
         <div class="hiden-xs col-3" ></div>
         <div class="col-9" id="conteudoAdm2" style="background-color:;border:0px dashed rgba(0,0,0,1);padding:2px;margin-top:2px" >
@@ -375,14 +376,11 @@
 
 	<div class="container" style="border:0px #000000 dashed;margin-top:0px;">
 		<div style="border:0px #000 DASHED;margin-top:5px;float:right;text-align:right;">
-			Desenvolvido por <a  class="btn btn-outline-secondary btn-sm" href="http://www.voxa.com.br/" target="_blank">Studium Voxa</a>
+			Desenvolvido por <a   class="btn btn-outline-<?php echo $corMenuAdm; ?> btn-block" btn-sm" href="http://www.voxa.com.br/" target="_blank">Voxa</a>
 			<br /> 	<br />
 		</div>
 	</div>
     <?php //print_r($_SESSION); ?>
 </footer>
-
-
-
 </body>
 </html>

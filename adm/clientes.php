@@ -1,16 +1,13 @@
-﻿
 <?php
 	//include('conect.php');
-	ob_start(); 
+	ob_start();
 	@session_start();
 	include('globais.php');
-	
 		/*echo $corMenuAdm;*/ if($corMenuAdm=="secundary"){
 		$corMenuAdm = "default";
-	} 
+	}
 ?>
-
-<?php 	
+<?php
 $per_page = 7;
 include("conect.php");
 $sql = "SELECT * FROM `cliente`";
@@ -18,7 +15,6 @@ $sql = mysql_query($sql);
 $count = mysql_num_rows($sql);
 $pages = ceil($count/$per_page)
 ?>
-	
 <link rel="stylesheet" type="text/css" media="screen" href="css.css" />
 <script type="text/javascript" src="js/jquery-1.3.2.js"></script>
 <script type="text/javascript">
@@ -29,14 +25,11 @@ $(document).ready(function(){
 	function hideLoader(){
 		$('.search-background').fadeOut(200);
 	};
-	
 	$("#paging_button li").click(function(){
 		showLoader();
-		
 		$("#paging_button li").css({'background-color' : '#FAFAFA', 'color' : 'grey'});
 		$(this).css({'background-color' : '#FFF','color' : '#000'});
 		$("#links").load("datacli.php?page=" + this.id, hideLoader);
-		
 		return false;
 	});
 		$("#1").css({'background-color' : '#FFF','color' : '#000'});
@@ -51,20 +44,21 @@ $(document).ready(function(){
 		</div>-->
     <div class="junbotrom" >
         <ol class="breadcrumb">
-			<li>Portal do Clientes</li>
+					<li>Atendimento Clientes</li>
         </ol>
     </div>
     <div class="panel-group">
     <div class="panel panel-<?php echo $corPainel; ?>" style="">
-	<div class="panel-heading"><h3></h3></div>
+			<div class="panel-heading"><h3></h3></div>
     <div class="panel-body">
 		<div class="container" id="links" style="width:100%" style="border:1px green solid" >
-        </div>
+				//Entrada de informações dos clientes
+		</div>
 	</div>
     </div>
 	 <div id="paging_button" class="row text-center">
             <div class="col-lg-12">
-            <hr />
+            <hr/>
                 <ul class="pagination">
                     <?php
 		//Show page links
@@ -77,7 +71,7 @@ $(document).ready(function(){
 			<hr />
             </div>
         </div>
-        <!-- /.row 
+        <!-- /.row
 		</ul>
   	</div>-->
 </div>

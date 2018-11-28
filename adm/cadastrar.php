@@ -1,6 +1,6 @@
 <?php
 	include('protect.php');
-	include('conect.php');
+	include('globais.php');
 	?>
 <script>
 	$(".cadastrar").click(function(){
@@ -48,13 +48,13 @@
 	});
 
 </script>
-	<div id="container-fluid" style="border:0px orange solid;padding:0px;padding-top:24px">
+	<div id="container-fluid" style="border:1px orange solid;padding:0px;padding-top:-20px">
 
 		<!--<div class="search-background" style="border:1px #CCC solid">
 			<label><img src="loader.gif" alt="" /></label>
 		</div>-->
 	<div style="height:20px" class="visible-xs"></div>
-    <div class="junbotrom" style="margin-top:-20px;">
+    <div class="junbotrom" style="margin-top:0px;">
         <ol class="breadcrumb">
         <li>Portal do Clientes</li>
 
@@ -64,7 +64,7 @@
 	<div class="container"><h3>Cadastras Cliente</h3>
 	<hr></div>
     <div class="container">
-		<div class="container" id="links"style="border:0px green solid;background:white;padding:8px" >
+		<div class="container" id="links"style="border:0px green solid;background:white;padding:0px" >
 
           <!-- Modal content-->
 
@@ -103,7 +103,7 @@
 					  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Senha de acesso</label>
 					  <input type="password" class="form-control" id="acesso" placeholder=""-->
 					<br>
-						<button type="submit" class="btn-block btn btn-info btn-md cadastrar" >Criar Cliente</button>
+						<button type="submit"  class="btn btn-<?php echo $corMenuAdm; ?> btn-block cadastrar" >Criar Cliente</button>
 
 					<span id="alerta"></span>
 					<span id="resulta"></span>

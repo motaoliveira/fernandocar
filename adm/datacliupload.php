@@ -1,19 +1,30 @@
+
 <?php
 	include('protect.php');
 	include("globais.php");
+	//print_r($_POST);
+	@$id = $_POST['id'];
+	//@$id = $_POST['id'];
 
-	$id = $_POST['value'];
-
+	if(@$_POST){
+	mysql_query("UPDATE `edicao` SET `atuacao` = '$id' WHERE `edicao`.`id` = 1;");
+	}
+	else{
+	//echo "carregue a id ";
+	$sql = "SELECT * FROM `edicao` WHERE `id`=1";
+	$query = mysql_query($sql);
+	while ($banco = mysql_fetch_assoc($query))
+	{
+	//echo "entrou aqui";
+		$atuacaoId = $banco['atuacao'];}
+		// echo $atuacaoId;
 	?>
-			<script src="delupfile.js"></script>
-
-
-	<h3>Envio de Documentos </h3>
-	<hr>
+	<script src="interno.js" type="text/javascript"></script>
+	<script src="delupfile.js"></script>
 	<span class="resultadofixo" >
 	<?php
 
-	$sql = "SELECT * FROM `cliente` WHERE `id` = $id";
+	$sql = "SELECT * FROM `cliente` WHERE `id` = $atuacaoId";
 
 	$rsd = mysql_query($sql);
 	//echo "entrou aqui";
@@ -34,19 +45,32 @@
 		$clientBut = $banco["but"];
 
 	?>
-
+	<!-- Atuação  -->
+		 <div class="row" style="padding:4px;background:white">
+			 <div class="col-12" >
+				 <span class="spandate"><?php echo $clientLog;?></span>
+			 </div>
+					 <div class="col-2" >
+							 <img class="img-responsive img-hover"  src="../clientes/<?php echo $clientID;?>/img/<?php echo $clientBut;?>" alt="" style="height:140px">
+					 </div>
+					 <div class="col-8" style="padding-left:30px">
+						 <h3><strong><?php echo $clientNome;?></strong></h3>
+						 <p><strong>CPF/CNPJ:</strong> <?php echo $clientNumero;?></p>
+						 <!--button type="submit" id="<?php echo $clientBut; ?>"  value="<?php echo $clientID; ?>" class="btn btn-outline-danger ltn"><i class="fa fa-trash" aria-hidden="true"></i> Deletar </button-->
+						 <button  value="<?php echo $clientID; ?>" id=""  class="btn btn-outline-success editarinterno"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
+						 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-primary uploadinterno"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
+						 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-warning ordem"><i class="fa fa-pencil" aria-hidden="true"></i>Ordem de Serviço	</button>
+					 </div>
+		 </div>
+		 <!-- /.row -->
+	<span><hr></span>
+<div class="resultadointerno">
      <!-- Atuação  -->
         <div class="row" style="background:white;padding:12px">
-			<div class="col-12" >
-				<span class="spandate"><?php echo $clientLog;?></span>
-			</div>
-            <div class="col-3">
-				<img class="img-responsive img-hover"  src="../clientes/<?php echo $clientID;?>/img/<?php echo $clientBut;?>" alt="" style="height:140px">
-            </div>
-            <div class="col-9" style="background:white;padding:12px" >
-				<h4><?php echo $clientNome;?></h4>
-				<p><?php echo $clientNumero;?></p>
-            </div>
+
+					<div class="col-12" >
+						<span class="spandate"><?php echo $clientLog;?></span>
+					</div>
         </div>
         <!-- /.row -->
 		 <hr>
@@ -86,7 +110,7 @@
 		</div>
 	<div class="container arquivos" style="background:white;padding-top:0px">
 			<?php
-				$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $id AND `view` = 1" ;
+				$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $atuacaoId AND `view` = 1" ;
 				$rsd = mysql_query($sql);
 				$cor = "white";
 			while ($banco = mysql_fetch_assoc($rsd)){
@@ -107,6 +131,8 @@
 				<?php
 					if($cor == "white"){$cor = "#fcfcfc";}else{$cor="white";}
 			}
+			}
 			?>
 	</div>
 	</span>
+		</div>
