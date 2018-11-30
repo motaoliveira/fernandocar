@@ -87,9 +87,10 @@
 							 <h3><strong><?php echo $clientNome;?></strong></h3>
 							 <p><strong>CPF/CNPJ:</strong> <?php echo $clientNumero;?></p>
 							 <!--button type="submit" id="<?php echo $clientBut; ?>"  value="<?php echo $clientID; ?>" class="btn btn-outline-danger ltn"><i class="fa fa-trash" aria-hidden="true"></i> Deletar </button-->
-							 <button  value="<?php echo $clientID; ?>" id=""  class="btn btn-outline-success editar"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
-							 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-primary uploadinterno"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
-							 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-warning ordem"><i class="fa fa-pencil" aria-hidden="true"></i>Ordem de Serviço	</button>
+							 <button  value="<?php echo $clientID; ?>" id=""  class="btn btn-outline-<?php echo $corMenuAdm; ?> editarinterno"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
+							 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> uploadinterno"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
+							 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> ordeminterno"><i class="fa fa-pencil" aria-hidden="true"></i>Criar OS	</button>
+							  <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> listarosinter"><i class="fa fa-pencil" aria-hidden="true"></i>Listar OS	</button>
 						 </div>
 			 </div>
 			 <!-- /.row -->
@@ -164,10 +165,10 @@
 			<br>
 		</div-->
 
-			<div class="col-md-12  col-lg-12 col-sm-12 col-xs-12">
+			<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10">
 			<br />
 				<div class="form-group" >
-					<button type="submit" class="btn btn-<?php echo $corMenuAdm; ?>" id="sendAtua" name="sendAtua">
+					<button type="submit" class="btn btn-block btn-<?php echo $corMenuAdm; ?>" id="sendAtua" name="sendAtua">
 						<span class="glyphicon glyphicon-ok"></span> Atualizar Informações
 					</button>
 				</div>

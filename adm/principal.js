@@ -2,7 +2,7 @@
 $(".upload").click(function(){
  var id = $(this).val();
 $('#paging_button').hide();
-
+alert("upload");
 $.post("datacliupload.php",
      {
        id:id
@@ -14,21 +14,6 @@ $.post("datacliupload.php",
      });
 });
 
-//Documentos
-$(".upload").click(function(){
- var id = $(this).val();
-$('#paging_button').hide();
-
-$.post("datacliupload.php",
-     {
-       id:id
-     },
-     function(data, status){
-     //alert(data);
-     $("#links").load("datacliupload.php");
-     $('#paging_button').hide();
-     });
-});
 
 //deletar
 $(".ltn").click(function(){
@@ -59,17 +44,33 @@ $(".editar").click(function(){
         });
   });
 
-  //Ordem de Serviço
-  $(".ordem").click(function(){
-   var visao = $(this).val();
-   //alert(visao);
+  //Ordem de Serviço  listaros
+  $(".oscriar").click(function(){
+   var id = $(this).val();
   $('#paging_button').hide();
-  $.post("dataclivisao.php",
+  alert("oscriar");
+  /*
+  $.post("datacliordem.php",
       {
-        visao:visao,
+        id:id,
       },
       function(data, status){
-        $(".resultadofixo").html(data);
+        $(".resultado").load("datacliordem.php");
         $('#paging_button').hide();
-      });
+      });*/
+});
+//Ordem de Serviço
+$(".listaros").click(function(){
+ var id = $(this).val();
+$('#paging_button').hide();
+alert("listaros");
+
+$.post("datalistordem.php",
+    {
+      id:id,
+    },
+    function(data, status){
+      $("#links").load("datalistordem.php");
+      $('#paging_button').hide();
+    });
 });

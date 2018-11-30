@@ -44,15 +44,17 @@
 	            </div>
 	            <div class="col-8" style="padding-left:30px">
 								<h3><strong><?php echo $clientNome;?></strong></h3>
-								<p><strong>CPF/CNPJ:</strong> <?php echo $clientNumero;?></p>
-								<button type="submit" id="<?php echo $clientBut; ?>"  value="<?php echo $clientID; ?>" class="btn btn-outline-danger ltn"><i class="fa fa-trash" aria-hidden="true"></i> Deletar </button>
-								<button  value="<?php echo $clientID; ?>" id=""  class="btn btn-outline-success editar"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
-								<button  value="<?php echo $clientID; ?>" class="btn btn-outline-primary upload"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
-								<button  value="<?php echo $clientID; ?>" class="btn btn-outline-warning ordem"><i class="fa fa-pencil" aria-hidden="true"></i> Ordem de Serviço</button>
+								<p><strong>CPF/CNPJ:</strong> <?php echo $clientNumero;?> id: <?php echo $clientID;?> </p>
+								<button type="submit" id="<?php echo $clientBut; ?>"  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> ltn"><i class="fa fa-trash" aria-hidden="true"></i> Deletar </button>
+								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> editar"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
+								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> upload"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
+								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> oscriar"><i class="fa fa-pencil" aria-hidden="true"></i> Criar OS</button>
+								<button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> listaros"><i class="fa fa-pencil" aria-hidden="true"></i>Listar OS	</button>
+
 	            </div>
         </div>
         <!-- /.row -->
-		<span><hr></span>
+		<div><hr></div>
 		<?php
 	}
 	?>

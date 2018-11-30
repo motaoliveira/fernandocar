@@ -47,6 +47,7 @@
 	?>
 	<!-- Atuação  -->
 		 <div class="row" style="padding:4px;background:white">
+
 			 <div class="col-12" >
 				 <span class="spandate"><?php echo $clientLog;?></span>
 			 </div>
@@ -57,9 +58,10 @@
 						 <h3><strong><?php echo $clientNome;?></strong></h3>
 						 <p><strong>CPF/CNPJ:</strong> <?php echo $clientNumero;?></p>
 						 <!--button type="submit" id="<?php echo $clientBut; ?>"  value="<?php echo $clientID; ?>" class="btn btn-outline-danger ltn"><i class="fa fa-trash" aria-hidden="true"></i> Deletar </button-->
-						 <button  value="<?php echo $clientID; ?>" id=""  class="btn btn-outline-success editarinterno"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
-						 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-primary uploadinterno"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
-						 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-warning ordem"><i class="fa fa-pencil" aria-hidden="true"></i>Ordem de Serviço	</button>
+						 <button  value="<?php echo $clientID; ?>" id=""  class="btn btn-outline-<?php echo $corMenuAdm; ?> editarinterno"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
+						 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> uploadinterno"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
+						 <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> ordeminterno"><i class="fa fa-pencil" aria-hidden="true"></i>Criar OS	</button>
+						  <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> listarosinter"><i class="fa fa-pencil" aria-hidden="true"></i>Listar OS	</button>
 					 </div>
 		 </div>
 		 <!-- /.row -->
@@ -73,7 +75,7 @@
 					</div>
         </div>
         <!-- /.row -->
-		 <hr>
+
 		 <div class="container" style="background:white;padding-top:12px;padding-botton:12px">
 			 <form class="form" class="row" action="sendfile.php" method="post" accept-charset="utf-8" enctype="multipart/form-data"  >
 
@@ -84,11 +86,11 @@
 					<input type="hidden" value="<?php echo $clientID;?>" name="IdCliente">
 					<div class="col-12" ><label>Escolha o Documento: </label><input type="file" name="upload" class="btn btn-default form-control"  id="uploadArquivos" style="border:1px solid #c0c0c0" multiple>
 					</div>
-					<div class="col-12"  style="padding:20px;" ><button type="submit" class="btn btn-outline-primary btn-block" id="sendfile">
+					<div class="col-12"  style="padding:20px;" ><button type="submit" class="btn btn-outline-<?php echo $corMenuAdm; ?> btn-block" id="sendfile">
 					<span class="glyphicon glyphicon-ok btn-block"></span> Enviar</button></div>
 			 </form>
 		 </div>
-		 <hr>
+		 <span><hr></span>
 
 
 
@@ -125,8 +127,8 @@
 
 				<div class="row" style="padding:4px; background-color:<?php echo $cor; ?>;">
 					<div class="col-8"><?php echo $cliNome ?></div>
-					<div class="col-2"><a class="btn btn-outline-success" target="blank" href="../clientes/<?php echo $client ?>/doc/<?php echo $cliDocuent ?>">download </a></div>
-					<div class="col-2"><a class="btn btn-outline-danger delupfile" id="<?php echo $cliID ?>" name="<?php echo $client ?>"  href="#"> Deletar </a></div>
+					<div class="col-2"><a class="btn btn-outline-<?php echo $corMenuAdm; ?>" target="blank" href="../clientes/<?php echo $client ?>/doc/<?php echo $cliDocuent ?>">download </a></div>
+					<div class="col-2"><a class="btn btn-outline-<?php echo $corMenuAdm; ?> delupfile" id="<?php echo $cliID ?>" name="<?php echo $client ?>"  href="#"> Deletar </a></div>
 				</div>
 				<?php
 					if($cor == "white"){$cor = "#fcfcfc";}else{$cor="white";}
@@ -134,5 +136,5 @@
 			}
 			?>
 	</div>
-	</span>
-		</div>
+			</div>
+					</span>

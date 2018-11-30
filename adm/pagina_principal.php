@@ -13,9 +13,9 @@
 		<script src="../js/jquery.js"></script>
 
 		<!-- Popper JS -->
-		<script src="../js/bootstrap.min.js" ></script>
+		<!--script src="../js/bootstrap.min.js" ></script-->
 		<script src="../js/bootstrap.js" ></script>
-		<script src="../js/popper.min.js" ></script>
+		<!--script src="../js/popper.min.js" ></script-->
 		<script src="../js/popper.js" ></script>
 
 		<!-- Latest compiled and minified CSS -->
@@ -25,7 +25,7 @@
 		<!--link rel="stylesheet" href="../css/style.css"-->
 		<link rel="icon" href="favicon.ico" type="image/ico" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="stylesheet" href="../css/painel.css">
+    <!--link rel="stylesheet" href="../css/painel.css"-->
 
 	<script>
 	jQuery(document).ready(function(){
