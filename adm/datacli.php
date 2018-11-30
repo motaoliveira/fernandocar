@@ -49,7 +49,7 @@
 								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> editar"><i class="fa fa-pencil" aria-hidden="true"></i> Atualizar </button>
 								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> upload"><i class="fa fa-pencil" aria-hidden="true"></i>Documentos</button>
 								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> oscriar"><i class="fa fa-pencil" aria-hidden="true"></i> Criar OS</button>
-								<button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> listaros"><i class="fa fa-pencil" aria-hidden="true"></i>Listar OS	</button>
+								<button  value="<?php echo $clientID; ?>" class="btn  btn-outline-<?php echo $corMenuAdm; ?> listaros"><i class="fa fa-pencil" aria-hidden="true"></i>Listar OS	</button>
 
 	            </div>
         </div>

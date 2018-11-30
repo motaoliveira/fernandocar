@@ -1,5 +1,4 @@
 <?php
-	//include('conect.php');
 	ob_start();
 	@session_start();
 	include('globais.php');
@@ -9,7 +8,6 @@
 ?>
 <?php
 $per_page = 7;
-include("conect.php");
 $sql = "SELECT * FROM `cliente`";
 $sql = mysql_query($sql);
 $count = mysql_num_rows($sql);
@@ -47,33 +45,28 @@ $(document).ready(function(){
         </ol>
     </div>
     <div class="panel-group">
-    <div class="panel panel-<?php echo $corPainel; ?>" style="">
-			<div class="panel-heading"><h3></h3></div>
-    <div class="panel-body">
-		<div class="container" id="links" style="width:100%" style="border:1px green solid" >
-				//Entrada de informações dos clientes
-		</div>
+	    <div class="panel panel-<?php echo $corPainel; ?>" style="">
+				<div class="panel-heading"><h3></h3></div>
+		    <div class="panel-body">
+					<div class="container" id="links" style="width:100%" style="border:0px green solid" >
+
+					</div>
+				</div>
+	    </div>
+		 <div id="paging_button" class="row text-center">
+	            <div class="col-lg-12">
+	            		<hr/>
+		                <ul class="pagination">
+		                    <?php
+												for($i=1; $i<=$pages; $i++)
+												{
+													echo '<li class=" btn btn-default" id="'.$i.'" >'.$i.'</li>';
+												}
+												?>
+		                </ul>
+									<hr />
+	            </div>
+	    </div>
+
 	</div>
-    </div>
-	 <div id="paging_button" class="row text-center">
-            <div class="col-lg-12">
-            <hr/>
-                <ul class="pagination">
-                    <?php
-		//Show page links
-		//if(!$_GET['page']){echo "sem page";}
-		for($i=1; $i<=$pages; $i++)
-		{
-			echo '<li class=" btn btn-default" id="'.$i.'" >'.$i.'</li>';
-		}?>
-                </ul>
-			<hr />
-            </div>
-        </div>
-        <!-- /.row
-		</ul>
-  	</div>-->
-</div>
-<?php
-$_SESSION['line1'] = "0";
-?>
+<?php $_SESSION['line1'] = "0"; ?>

@@ -19,7 +19,7 @@ $.post("datacliupload.php",
 $(".ltn").click(function(){
     var id = $(this).val();
     var file = $(this).attr("id");
-    var r = confirm("Deseja deletar esse cliente??");
+    var r = confirm("Deseja Deletar Esse Cliente?");
     if(r === true){
       $.post("cliente_del.php", {id:id , file:file},function(get_retorno) {
           $('#clientes').trigger('click');
@@ -48,7 +48,10 @@ $(".editar").click(function(){
   $(".oscriar").click(function(){
    var id = $(this).val();
   $('#paging_button').hide();
-  alert("oscriar");
+
+  var r = confirm("Deseja Criar Uma Ordem de Serviço?");
+  if(r === true){
+    alert("oscriar");
   /*
   $.post("datacliordem.php",
       {
@@ -58,6 +61,7 @@ $(".editar").click(function(){
         $(".resultado").load("datacliordem.php");
         $('#paging_button').hide();
       });*/
+    }
 });
 //Ordem de Serviço
 $(".listaros").click(function(){
@@ -73,4 +77,21 @@ $.post("datalistordem.php",
       $("#links").load("datalistordem.php");
       $('#paging_button').hide();
     });
+});
+
+$(".busca").click(function(){
+  $('#paging_button').hide();
+  var nomeCliente = $(".nomeCliente").val();
+  if(nomeCliente ===''){
+    alert("Busca Vazia");
+  }else{
+  $.post("dataclibusca.php",
+      {
+        nomeCliente:nomeCliente,
+      },
+      function(data, status){
+        $(".resultadofixo").load("dataclibusca.php");
+        $('#paging_button').hide();
+      });
+  }
 });

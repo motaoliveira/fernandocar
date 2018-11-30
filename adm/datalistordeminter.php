@@ -1,6 +1,6 @@
 <?php
 
-	include('conect.php');
+	include('globais.php');
 	//print_r($_POST);
 	@$atuacaoId = $_POST['id'];
 
@@ -16,13 +16,14 @@
 	//echo "entrou aqui";
 		$atuacaoId = $banco['atuacao'];
 	}
-		//echo $atuacaoId;
+	
+
 	?>
 
 
 
 	<?php
-	/* /echo $atuacaoId;
+
 	$sql = "SELECT * FROM `cliente` WHERE `id` = $atuacaoId";
 
 	$rsd = mysql_query($sql);
@@ -75,5 +76,5 @@
 		  </tbody>
 		</table>
 		<?php
- */
+	}
 		?>
