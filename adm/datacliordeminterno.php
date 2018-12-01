@@ -1,11 +1,9 @@
-
 <?php
 	include('protect.php');
 	include("globais.php");
 	//print_r($_POST);
 	@$id = $_POST['id'];
 	//@$id = $_POST['id'];
-
 	if(@$_POST){
 	mysql_query("UPDATE `edicao` SET `atuacao` = '$id' WHERE `edicao`.`id` = 1;");
 	}
@@ -20,34 +18,29 @@
 		// echo $atuacaoId;
 	?>
 	<!--script src="interno.js" type="text/javascript"></script-->
-	<script src="delupfile.js"></script>
+	<script src="incluir.js"></script>
 	<span class="resultadofixo" >
-	<?php
-
-	$sql = "SELECT * FROM `cliente` WHERE `id` = $atuacaoId";
-
-	$rsd = mysql_query($sql);
-	//echo "entrou aqui";
-	while ($banco = mysql_fetch_assoc($rsd))
-	{
-	//echo "entrou aqui";
-
-		$clientID = $banco["id"];
-		$clientNome = $banco["nome"];
-		$clientEmail = $banco["email"];
-		$clientCel = $banco["celular"];
-		$cleintSenha = $banco["senha"];
-		$clientRua = $banco["rua"];
-		$clientNumero = $banco["numero"];
-		$clientBairro = $banco["bairro"];
-		$clientCep = $banco["cep"];
-		$clientLog = $banco["log"];
-		$clientBut = $banco["but"];
-
-	?>
-	<!-- Atuação  -->
+			<?php
+				$sql = "SELECT * FROM `cliente` WHERE `id` = $atuacaoId";
+				$rsd = mysql_query($sql);
+					//echo "entrou aqui";
+				while ($banco = mysql_fetch_assoc($rsd))
+				{
+					//echo "entrou aqui";
+				$clientID = $banco["id"];
+				$clientNome = $banco["nome"];
+				$clientEmail = $banco["email"];
+				$clientCel = $banco["celular"];
+				$cleintSenha = $banco["senha"];
+				$clientRua = $banco["rua"];
+				$clientNumero = $banco["numero"];
+				$clientBairro = $banco["bairro"];
+				$clientCep = $banco["cep"];
+				$clientLog = $banco["log"];
+				$clientBut = $banco["but"];
+			?>
+		<!-- Atuação  -->
 		 <div class="row" style="padding:4px;background:white">
-
 			 <div class="col-12" >
 				 <span class="spandate"><?php echo $clientLog;?></span>
 			 </div>
@@ -65,76 +58,91 @@
 					 </div>
 		 </div>
 		 <!-- /.row -->
+		 	<?php } ?>
 	<span><hr></span>
-<div class="resultadointerno">
-     <!-- Atuação  -->
-        <div class="row" style="background:white;padding:12px">
+		<div class="resultadointerno" style="background:white;padding-top:0px;border:0px green dashed;">
+			<div class="container arquivos" style="background:white;padding-top:0px;border:0px red solid;">
+					<?php
+						$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $atuacaoId AND `view` = 1" ;
+						$rsd = mysql_query($sql);
+						$cor = "white";
+					while ($banco = mysql_fetch_assoc($rsd)){
+							$cliID = $banco["id"];
+							$cliNome = $banco["nome"];
+							$cliCargo = $banco["cargo"];
+							$cliDocuent = $banco["documento"];
+							$cliView = $banco["view"];
+							$cliObs = $banco["obs"];
+							$client = $banco["cliente"];
+					}
 
-					<div class="col-12" >
-						<span class="spandate"><?php echo $clientLog;?></span>
-					</div>
-        </div>
-        <!-- /.row -->
+					?>
+			</div>
+			<div class="container osdetalhe" style="background:white;padding-top:0px;border:0px yellow dashed;">
+				<table class="table table-striped table-bordered ">
+				<thead>
+					<tr>
+						<th scope="col">Serviço</th>
+						<th scope="col" class="text-right" >Valor</th>
+						<th scope="col" class="text-right" ></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+							$queryline = "SELECT * FROM `osdetalhe` WHERE `id_us`=$clientID";
+							$query = mysql_query($queryline);
+							while($db = mysql_fetch_array($query)){
+								$osIdUsuario = $db['id_us'];
+								$osCodigo = $db['cod_os'];
+								$osIdServ = $db['id_serv'];
+								$osServico = $db['servico'];
+								$osQuantidade = $db['quantidade'];
+								$osValor = $db['valor'];
+					?>
+						<input type="hidden" value="<?php echo $osIdUsuario ?>" class="osusuario">
+						<input type="hidden" value="<?php echo $osCodigo ?>" class="oscod">
+					<tr>
+						<th scope="row"><?php echo $osServico; ?></th>
+						<th class="text-right" >R$ <?php echo $osValor; ?></th>
+						<td class="text-right" ><button value="<?php echo $osIdServ; ?>" class="btn btn-outline-danger retirar" active> - </button></td>
+					</tr>
+					<?php
+						}
+						$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$osIdUsuario AND `cod_os`=$osCodigo";
+						$soma = mysql_query($querysoma);
+						while($dba = mysql_fetch_array($soma)){
+							$geral = $dba['geral'];
+						}
+					?>
+					<tr>
+						<th scope="row"></th>
+						<th class="text-right" >Total: R$ <?php echo $geral; ?></th>
+						<th class="text-left"></th>
 
-		 <div class="container" style="background:white;padding-top:12px;padding-botton:12px">
-			 <form class="form" class="row" action="sendfile.php" method="post" accept-charset="utf-8" enctype="multipart/form-data"  >
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			<?php
+		}
+		?>
+		</div>
 
-					<div class="col-12" ><label>Nome do Documento: </label><input type="text" class="form-control" name="Nome" ></div>
-
-					<div class="col-12" ><label>Área: </label><input type="text" class="form-control" name="Cargo"></div>
-
-					<input type="hidden" value="<?php echo $clientID;?>" name="IdCliente">
-					<div class="col-12" ><label>Escolha o Documento: </label><input type="file" name="upload" class="btn btn-default form-control"  id="uploadArquivos" style="border:1px solid #c0c0c0" multiple>
-					</div>
-					<div class="col-12"  style="padding:20px;" ><button type="submit" class="btn btn-outline-<?php echo $corMenuAdm; ?> btn-block" id="sendfile">
-					<span class="glyphicon glyphicon-ok btn-block"></span> Enviar</button></div>
-			 </form>
-		 </div>
-		 <span><hr></span>
-
-
-
-	<?php } ?>
-		<div class="container" style="background:white;padding:12px">
-			<h4> Arquivos enviados </h4>
-			<hr>
-			<div class="row" style="background:black;padding:12px;color:white">
-				<div class="col-8" >
-				<label>Nome</label>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+						<input type="text" class="form-control col-10 servico" id="servico" placeholder="Serviço">
 				</div>
-				<div class="col-2" >
-				<label>Download</label>
+				<div class="col">
+						<p><input type="text" class="form-control valor" id="valor" placeholder="Valor"></p>
 				</div>
-				<div class="col-2" >
-				<label>Deletar</label>
+				<div class="col">
+					<button class="btn btn-outline-<?php echo $corMenuAdm; ?> inluir" >Incluir Serviço</button>
+
+				</div>
+				<div class="col" >
+							<button class="btn btn-outline-danger retirar" active> Print </button>
 				</div>
 			</div>
 		</div>
-	<div class="container arquivos" style="background:white;padding-top:0px">
-			<?php
-				$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $atuacaoId AND `view` = 1" ;
-				$rsd = mysql_query($sql);
-				$cor = "white";
-			while ($banco = mysql_fetch_assoc($rsd)){
-					$cliID = $banco["id"];
-					$cliNome = $banco["nome"];
-					$cliCargo = $banco["cargo"];
-					$cliDocuent = $banco["documento"];
-					$cliView = $banco["view"];
-					$cliObs = $banco["obs"];
-					$client = $banco["cliente"];
-				?>
-
-				<div class="row" style="padding:4px; background-color:<?php echo $cor; ?>;">
-					<div class="col-8"><?php echo $cliNome ?></div>
-					<div class="col-2"><a class="btn btn-outline-<?php echo $corMenuAdm; ?>" target="blank" href="../clientes/<?php echo $client ?>/doc/<?php echo $cliDocuent ?>">download </a></div>
-					<div class="col-2"><a class="btn btn-outline-<?php echo $corMenuAdm; ?> delupfile" id="<?php echo $cliID ?>" name="<?php echo $client ?>"  href="#"> Deletar </a></div>
-				</div>
-				<?php
-					if($cor == "white"){$cor = "#fcfcfc";}else{$cor="white";}
-			}
-			}
-			?>
-	</div>
-			</div>
-					</span>
+	</span>

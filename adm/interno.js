@@ -33,15 +33,19 @@ $(".editarinterno").click(function(){
   $(".ordeminterno").click(function(){
    var id = $(this).val();
   $('#paging_button').hide();
-   alert("ordeminterno");
-  $.post("datacliordeminterno.php",
-      {
-        id:id,
-      },
-      function(data, status){
-        $(".resultadointerno").load("datacliordeminterno.php");
-        $('#paging_button').hide();
-      });
+
+   var r = confirm("Deseja Criar Uma Ordem de Serviço?");
+   if(r === true){
+     alert("ordeminterno");
+        $.post("datacliordeminterno.php",
+            {
+              id:id,
+            },
+            function(data, status){
+              $(".resultadointerno").load("datacliordeminterno.php");
+              $('#paging_button').hide();
+            });
+        }
 });
 
   //Ordem de Serviço lista
