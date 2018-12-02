@@ -1,13 +1,11 @@
-<script src="interno.js" type="text/javascript"></script>
-<script src="tinymce/js/tinymce/tinymce.js"></script>
 <?php
 		include('protect.php');
 		include('globais.php');
-
 		@$id = $_POST['id'];
 		//print_r($_POST);
 		if(@$_POST){
-		mysql_query("UPDATE `edicao` SET `atuacao` = '$id' WHERE `edicao`.`id` = 1;"); }
+		mysql_query("UPDATE `edicao` SET `atuacao` = '$id' WHERE `edicao`.`id` = 1;");
+		}
 		else{
 		//echo "carregue a id ";
 		$sql = "SELECT * FROM `edicao` WHERE `id`=1";
@@ -15,54 +13,16 @@
 		while ($banco = mysql_fetch_assoc($query))
 		{
 		//echo "entrou aqui";
-			$atuacaoId = $banco['atuacao'];}
+			$atuacaoId = $banco['atuacao'];
+		}
 			 //echo $atuacaoId;
 		 ?>
-
-		<script>
-		tinymce.init({
-		  selector: 'textarea',
-		  //images_upload_url: 'postAcceptor.php',
-		  //images_upload_base_path: '/some/basepath',
-		  //images_upload_credentials: true,
-		  height: 400,
-		  menubar: false,
-		  plugins: [
-		    'advlist autolink lists link image charmap print preview anchor',
-		    'searchreplace visualblocks code fullscreen',
-		    'insertdatetime media table contextmenu paste code'
-		  ],
-		  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-		  content_css: '//www.tinymce.com/css/codepen.min.css'
-		});
-		</script>
-		<script>
-		$(document).ready(function(){
-			 $("#sendAtua").click(function()
-					{
-					alert("Verifique se todos os campos estão corretamente preenchidos");
-					/* var tinyMce = tinyMCE.get('mensagem').getContent();
-					var titulo = $('#titulo').val();
-					var descricao = $('#descricao').val();
-					var mensage = $('#tex').val();
-					var arq2 = $('#exemplo').val();
-					if(titulo =="" || descricao=="" || mensage=="" || arq2==""){
-						alert("Verifique se todos os campos estão corretamente preenchidos");
-					}
-					else
-					{
-					//$.post("atuacao_ins.php", { titulo1:titulo , descricao1:descricao, mensage1:mensage, arq:arq2},				function(get_retorno) {alert(get_retorno);
-									 // });
-						alert('Tudo preenchido corretamente');
-					}*/
-					});
-			  });
-		</script>
+	<script src="interno.js" type="text/javascript"></script>
+	<span class="resultadofixo" >
 		<?php
 			$sq = "SELECT * FROM `cliente` WHERE `id`=$atuacaoId";
 				$quer = mysql_query($sq);
 			while($banco = mysql_fetch_assoc($quer)){
-
 						$clientID = $banco["id"];
 						$clientNome = $banco["nome"];
 						$clientEmail = $banco["email"];
@@ -177,9 +137,9 @@
     </div>
          <?php
 	}
-
 		}
 	?>
  </div>
   </div>
 </div>
+</span>

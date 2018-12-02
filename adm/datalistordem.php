@@ -1,5 +1,5 @@
-<script src="interno.js" type="text/javascript"></script>
-<script src="tinymce/js/tinymce/tinymce.js"></script>
+
+
 <?php
 		include('protect.php');
 		include('globais.php');
@@ -19,48 +19,10 @@
 			 //echo $atuacaoId;
 		 ?>
 
-		<script>
-		tinymce.init({
-		  selector: 'textarea',
-		  //images_upload_url: 'postAcceptor.php',
-		  //images_upload_base_path: '/some/basepath',
-		  //images_upload_credentials: true,
-		  height: 400,
-		  menubar: false,
-		  plugins: [
-		    'advlist autolink lists link image charmap print preview anchor',
-		    'searchreplace visualblocks code fullscreen',
-		    'insertdatetime media table contextmenu paste code'
-		  ],
-		  toolbar: 'undo redo | insert | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-		  content_css: '//www.tinymce.com/css/codepen.min.css'
-		});
-		</script>
-		<script>
-		$(document).ready(function(){
-			 $("#sendAtua").click(function()
-					{
-					alert("Verifique se todos os campos estão corretamente preenchidos");
-					/* var tinyMce = tinyMCE.get('mensagem').getContent();
-					var titulo = $('#titulo').val();
-					var descricao = $('#descricao').val();
-					var mensage = $('#tex').val();
-					var arq2 = $('#exemplo').val();
-					if(titulo =="" || descricao=="" || mensage=="" || arq2==""){
-						alert("Verifique se todos os campos estão corretamente preenchidos");
-					}
-					else
-					{
-					//$.post("atuacao_ins.php", { titulo1:titulo , descricao1:descricao, mensage1:mensage, arq:arq2},				function(get_retorno) {alert(get_retorno);
-									 // });
-						alert('Tudo preenchido corretamente');
-					}*/
-					});
-			  });
-		</script>
+
 		<?php
 			$sq = "SELECT * FROM `cliente` WHERE `id`=$atuacaoId";
-				$quer = mysql_query($sq);
+			$quer = mysql_query($sq);
 			while($banco = mysql_fetch_assoc($quer)){
 
 						$clientID = $banco["id"];
@@ -76,6 +38,7 @@
 						$clientBut = $banco["but"];
 		?>
 		<!-- Atuação  -->
+			<script src="interno.js" type="text/javascript"></script>
 			 <div class="row" style="padding:4px;background:white">
 				 <div class="col-12" >
 					 <span class="spandate"><?php echo $clientLog;?></span>
@@ -97,7 +60,8 @@
 			 <?php
 		 				}
 						  ?>
-	 <span><hr></span>
+<span><hr></span>
+<script src="editaros.js" type="text/javascript"></script>
 <div class="resultadointerno">
 
 
@@ -133,8 +97,8 @@
       <td><?php echo $osDate; ?></td>
       <td><?php echo $osProprietario; ?></td>
 			<td><?php echo $osPlaca; ?></td>
-      <td><button class="btn btn-outline-<?php echo $corMenuAdm; ?>" value="<?php echo $$osCodigo; ?>">delete</button></td>
-			<td><button class="btn btn-outline-<?php echo $corMenuAdm; ?>" value="<?php echo $$osCodigo; ?>">editar</button></td>
+      <td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> deletaross" value="<?php echo $osCodigo; ?>"  >Delete 1</button></td>
+			<td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> editaross"  value="<?php echo $osCodigo; ?>"  >Editar 2</button></td>
     </tr>
 		<?php
 				}

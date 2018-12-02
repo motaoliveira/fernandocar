@@ -1,9 +1,8 @@
+<script src="editaros.js" type="text/javascript"></script>
 <?php
-
 	include('globais.php');
 	//print_r($_POST);
 	@$atuacaoId = $_POST['id'];
-
 	if(@$_POST){
 	mysql_query("UPDATE `edicao` SET `atuacao` = '$atuacaoId' WHERE `edicao`.`id` = 1;");
 	}
@@ -16,16 +15,9 @@
 	//echo "entrou aqui";
 		$atuacaoId = $banco['atuacao'];
 	}
-	
-
 	?>
-
-
-
 	<?php
-
 	$sql = "SELECT * FROM `cliente` WHERE `id` = $atuacaoId";
-
 	$rsd = mysql_query($sql);
 	//echo "entrou aqui";
 	while ($banco = mysql_fetch_assoc($rsd))
@@ -47,8 +39,7 @@
 		  </thead>
 		  <tbody>
 				<?php
-
-						$queryline = "SELECT * FROM `ordserv` WHERE `id_us`=$clientID";
+						$queryline = "SELECT * FROM `ordserv` WHERE `id_us`=$clientID ORDER BY `id` DESC";
 						$query = mysql_query($queryline);
 						while($db = mysql_fetch_array($query)){
 							$osIdUsuario = $db['id_us'];
@@ -66,8 +57,8 @@
 		      <td><?php echo $osDate; ?></td>
 		      <td><?php echo $osProprietario; ?></td>
 					<td><?php echo $osPlaca; ?></td>
-		      <td><button class="btn btn-outline-<?php echo $corMenuAdm; ?>" value="<?php echo $$osCodigo; ?>">delete</button></td>
-					<td><button class="btn btn-outline-<?php echo $corMenuAdm; ?>" value="<?php echo $$osCodigo; ?>">editar</button></td>
+		      <td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> deletaross" value="<?php echo $osCodigo; ?>"  >Delete 1</button></td>
+					<td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> editaross" value="<?php echo $osCodigo; ?>"  >Editar 2</button></td>
 		    </tr>
 				<?php
 			}

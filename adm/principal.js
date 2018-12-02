@@ -67,8 +67,6 @@ $(".editar").click(function(){
 $(".listaros").click(function(){
  var id = $(this).val();
 $('#paging_button').hide();
-alert("listaros");
-
 $.post("datalistordem.php",
     {
       id:id,

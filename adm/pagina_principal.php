@@ -19,8 +19,11 @@
 		<script src="../js/popper.js" ></script>
 
 		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="../css/bootstrap.min.css" >
-		<link rel="stylesheet" href="../css/bootstrap.css" >
+		<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="../css/bootstrap.css" type="text/css" media="screen" >
+
+		<link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="print">
+		<link rel="stylesheet" href="../css/bootstrap.css" type="text/css" media="print" >
 		<!--link rel="stylesheet" href="../css/font-awesome.min.css"-->
 		<!--link rel="stylesheet" href="../css/style.css"-->
 		<link rel="icon" href="favicon.ico" type="image/ico" />

@@ -1,11 +1,9 @@
-<?php
-	include('protect.php');
-	include('globais.php');
-	?>
+
+
 <script>
 	$(".cadastrar").click(function(){
 		var nome = $("#nome").val();
-		var celular = 1;
+		var celular = $("#cel").val();;
 		var rua = 1;
 		var numero = $("#numero").val();
 		var bairro = 1;
@@ -48,12 +46,17 @@
 	});
 
 </script>
-	<div id="container-fluid" style="border:1px orange solid;padding:0px;padding-top:-20px">
+<?php
+	include("protect.php");
+	include("globais.php");
+
+
+	?>
+		<div id="container-fluid">
 
 		<!--<div class="search-background" style="border:1px #CCC solid">
 			<label><img src="loader.gif" alt="" /></label>
 		</div>-->
-	<div style="height:20px" class="visible-xs"></div>
     <div class="junbotrom" style="margin-top:0px;">
         <ol class="breadcrumb">
         <li>Portal do Clientes</li>
@@ -75,10 +78,10 @@
 					  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Nome</label>
 					  <input type="text" class="form-control " id="nome" placeholder="">
 
-					  <!--label for="cel"><span class="glyphicon glyphicon-phone"></span> Celular</label>
+					  <label for="cel"><span class="glyphicon glyphicon-phone"></span> Celular</label>
 					  <input type="tel" class="form-control " id="cel" placeholder="">
 
-					  <label for="rua"><span class="glyphicon glyphicon-user"></span> Endereço</label>
+					  <!--label for="rua"><span class="glyphicon glyphicon-user"></span> Endereço</label>
 					  <input type="text" class="form-control " id="rua" placeholder="" -->
 
 					  <label for="numero"><span class="glyphicon glyphicon-user"></span> CPF /CNPJ</label>
@@ -103,6 +106,7 @@
 					  <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Senha de acesso</label>
 					  <input type="password" class="form-control" id="acesso" placeholder=""-->
 					<br>
+
 						<button type="submit"  class="btn btn-<?php echo $corMenuAdm; ?> btn-block cadastrar" >Criar Cliente</button>
 
 					<span id="alerta"></span>

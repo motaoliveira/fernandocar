@@ -48,16 +48,16 @@ $(".editarinterno").click(function(){
         }
 });
 
-  //Ordem de Serviço lista
+//Ordem de Serviço lista
 $(".listarosinter").click(function(){
- var id = $(this).val();
- alert("listarosinter");
- $.post("datalistordeminter.php",
-     {
-       id:id,
-     },
-     function(data, status){
-       $(".resultadointerno").load("datalistordeminter.php");
-       $('#paging_button').hide();
-     });
+var id = $(this).val();
+alert("listarosinter");
+$.post("datalistordeminter.php",
+   {
+     id:id,
+   },
+   function(data, status){
+     $(".resultadointerno").load("datalistordeminter.php");
+     $('#paging_button').hide();
+   });
 });

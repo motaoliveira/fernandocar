@@ -19,11 +19,13 @@
 						});
 
 				});
-$(".retirar").click(function(){
+
+
+$(".retirarserv").click(function(){
 								var osusuario = $(".osusuario").val();
 								var oscod = $(".oscod").val();
 								var id = $(this).val();
-								alert(osusuario+" - "+oscod+" - "+id);
+								alert(id);
 								/*
 								$.post("servicoretirar.php",
 								{

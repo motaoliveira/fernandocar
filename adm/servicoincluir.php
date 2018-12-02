@@ -24,14 +24,13 @@
 
 
 	?>
-
-
+	<script src="incluir.js"></script>
 		<table class="table table-striped">
 		<thead>
 			<tr>
 				<th scope="col">Serviço</th>
 				<th scope="col" class="text-right" >Valor</th>
-				<th scope="col" >Valor</th>
+				<th scope="col" ></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -53,7 +52,7 @@
 			<tr>
 				<th scope="row"><?php echo $osServico; ?></th>
 				<th class="text-right" >R$ <?php echo $osValor; ?></th>
-				<td class="text-right" ><button value="<?php echo $osIdServ; ?>" class="btn btn-outline-danger retirar" active> - </button></td>
+				<td class="text-right" ><button value="<?php echo $osIdServ; ?>" class="btn btn-outline-danger retirarserv" active> - </button></td>
 			</tr>
 			<?php
 				}
