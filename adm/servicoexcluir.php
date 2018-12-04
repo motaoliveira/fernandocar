@@ -4,15 +4,13 @@
 
 				@$osusuario = $_POST['osusuario'];
 				@$oscod = $_POST['oscod'];
-				@$servico = $_POST['servico'];
-				@$valor = $_POST['valor'];
+				//@$servico = $_POST['servico'];
+				//@$valor = $_POST['valor'];
 				@$id = $_POST['id'];
-
+				//print_r($_POST);
 			if($_POST)
 			{
-				print_r($_POST);
-				mysql_query("UPDATE `edicao` SET `atuacao` = '$osusuario', `projeto` = '$oscod' WHERE `edicao`.`id` = 1;");
-				mysql_query("INSERT INTO `osdetalhe` (`id_us`, `cod_os`, `id_serv`, `servico`, `quantidade`, `valor`) VALUES ('$osusuario', '$oscod', '', '$servico', NULL, '$valor');");
+				mysql_query("DELETE FROM `osdetalhe` WHERE `osdetalhe`.`id_serv` = $id AND `id_us` = $osusuario AND `cod_os`= '$oscod'");
 			}
 			else
 			{
@@ -37,13 +35,15 @@
 			</tr>
 		</thead>
 		<tbody>
+
 			<?php
-				  //print_r($_POST);
+					//print_r($_POST);
 					//echo $osus;
 					$queryline = "SELECT * FROM `osdetalhe` WHERE `id_us` = $osus AND `cod_os` LIKE '$osco'";
 					$query = mysql_query($queryline);
-					$result = mysql_num_rows($query);
-					if($result>0){
+					$entradas = mysql_num_rows($query);
+					//cho  $entradas;
+					if($entradas>0){
 					while($db = mysql_fetch_array($query)){
 						$osIdUsuario = $db['id_us'];
 						$osCodigo = $db['cod_os'];
@@ -61,11 +61,12 @@
 			</tr>
 			<?php
 				}
-				$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$osIdUsuario AND `cod_os`=$osCodigo";
+				$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$osus AND `cod_os`=$osco";
 				$soma = mysql_query($querysoma);
 				while($dba = mysql_fetch_array($soma)){
 					$geral = $dba['geral'];
 				}
+
 			?>
 			<tr>
 				<th scope="row"></th>
@@ -74,13 +75,15 @@
 
 			</tr>
 			<?php
+
+
 		}else{
 			?>
 			<input type="hidden" value="<?php echo $osus ?>" class="osusuario">
 			<input type="hidden" value="<?php echo $osco ?>" class="oscod">
 			<?php
 		}
-			?>
+		?>
 		</tbody>
 	</table>
 

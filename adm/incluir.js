@@ -21,22 +21,27 @@
 				});
 
 
-$(".retirarserv").click(function(){
+$(".retirar").click(function(){
 								var osusuario = $(".osusuario").val();
 								var oscod = $(".oscod").val();
 								var id = $(this).val();
-								alert(id);
-								/*
+								alert(osusuario+' '+id+' 'oscod);
+
 								$.post("servicoretirar.php",
 								{
-									osusuario=osusuario,
+									osusuario:osusuario,
 									oscod:oscod,
 									id:id
 								},
 								function(data, status){
 								//alert(data);
-									$(".arquivos").load("servicodetalhe.php");
+									$(".osdetalhe").load("servicoretirar.php");
 									//$('#paging_button').hide();
 								});
 								*/
 							});
+
+
+$(".print").click(function(){
+
+		});

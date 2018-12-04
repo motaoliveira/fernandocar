@@ -1,18 +1,13 @@
 <?php
 			include('protect.php');
 			include("globais.php");
-
 				@$osusuario = $_POST['osusuario'];
 				@$oscod = $_POST['oscod'];
-				@$servico = $_POST['servico'];
-				@$valor = $_POST['valor'];
 				@$id = $_POST['id'];
-
 			if($_POST)
 			{
-				print_r($_POST);
-				mysql_query("UPDATE `edicao` SET `atuacao` = '$osusuario', `projeto` = '$oscod' WHERE `edicao`.`id` = 1;");
-				mysql_query("INSERT INTO `osdetalhe` (`id_us`, `cod_os`, `id_serv`, `servico`, `quantidade`, `valor`) VALUES ('$osusuario', '$oscod', '', '$servico', NULL, '$valor');");
+				mysql_query("UPDATE `edicao` SET `atuacao` = '$osusuario', `projeto` = '$oscod' WHERE `edicao`.`id` = 1;")
+				mysql_query("DELETE FROM `osdetalhe` WHERE `osdetalhe`.`id_serv` = $oscod;");
 			}
 			else
 			{
@@ -23,11 +18,8 @@
 				$osus = $dbank['atuacao'];
 				$osco= $dbank['projeto'];
 			}
-
-
-
 	?>
-	<script src="excluir.js"></script>
+	<script src="incluir.js"></script>
 		<table class="table table-striped">
 		<thead>
 			<tr>
@@ -38,12 +30,10 @@
 		</thead>
 		<tbody>
 			<?php
-				  //print_r($_POST);
-					//echo $osus;
+					print_r($_POST);
+					echo $osus;
 					$queryline = "SELECT * FROM `osdetalhe` WHERE `id_us` = $osus AND `cod_os` LIKE '$osco'";
 					$query = mysql_query($queryline);
-					$result = mysql_num_rows($query);
-					if($result>0){
 					while($db = mysql_fetch_array($query)){
 						$osIdUsuario = $db['id_us'];
 						$osCodigo = $db['cod_os'];
@@ -52,12 +42,12 @@
 						$osQuantidade = $db['quantidade'];
 						$osValor = $db['valor'];
 			?>
-			<input type="hidden" value="<?php echo $osIdUsuario ?>" class="osusuario">
-			<input type="hidden" value="<?php echo $osCodigo ?>" class="oscod">
+				<input type="hidden" value="<?php echo $osIdUsuario ?>" class="osusuario">
+				<input type="hidden" value="<?php echo $osCodigo ?>" class="oscod">
 			<tr>
 				<th scope="row"><?php echo $osServico; ?></th>
 				<th class="text-right" >R$ <?php echo $osValor; ?></th>
-				<th class="text-right" ><button value="<?php echo $osIdServ; ?>" class="btn btn-link excluir" active>○</button></th>
+				<td class="text-right" ><button value="<?php echo $osIdServ; ?>" class="btn btn-outline-danger retirarserv" active> - </button></td>
 			</tr>
 			<?php
 				}
@@ -73,14 +63,6 @@
 				<th class="text-left"></th>
 
 			</tr>
-			<?php
-		}else{
-			?>
-			<input type="hidden" value="<?php echo $osus ?>" class="osusuario">
-			<input type="hidden" value="<?php echo $osco ?>" class="oscod">
-			<?php
-		}
-			?>
 		</tbody>
 	</table>
 

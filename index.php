@@ -232,7 +232,7 @@
             <!-- Projects Row -->
             <div class="container" style="padding-top:30px;">
               <div class="row">
-              <div class="card bg-trans col shadow-sm" style="background-color: rgba(255,0,0,1.0);" >
+              <div class="card bg-trans col shadow-sm" style="background-color: rgba(0,0,0,1.0);" >
                   <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22208%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20208%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1673c93c728%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A11pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1673c93c728%22%3E%3Crect%20width%3D%22208%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2266.953125%22%20y%3D%22117.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 85px; width: 100%; display: block;">
                   <div class="card-body" >
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -289,16 +289,13 @@
                   <h1 class="">Orcamento
                   </h1>
                 </div>
-                 <div class="col-lg-3" style="padding-top:40px">
-                 <div class="fb-share-button" data-href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/index.php#sugestoes" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com">Compartilhar</a></div>
-                  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://<?php echo $_SERVER['SERVER_NAME']; ?>/index.php#sugestoes" data-lang="pt" >Tweetar</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                </div>
+
               </div>
               <!-- /.row -->
               <!-- Projects Row -->
               <div class="container" style="border-top:1px solid #f4f4f4;padding-top:30px;">
                 <div class="col-md-5">
-                   <img class="img-responsive" src="images/1.jpg" alt="">
+                   <img class="img-fluid" src="images/1.jpg" alt="">
                 </div>
                 <div class="col-md-7">
                   <!--form name="sentMessage" id="contactForm" novalidate-->
@@ -330,7 +327,7 @@
                     </div>
                     <div id="success"></div>
                     <!-- For success/fail messages -->
-                    <button type="submit" class="btn btn-primary sugest">Enviar Sugestão</button>
+                    <button type="submit" class="btn btn-outline-dark btn-block sugest">Enviar Sugestão</button>
                   <!--/form-->
                 </div>
               </div>
@@ -349,7 +346,7 @@
           </div>
           <!-- /.row -->
           <!-- Projects Row -->
-            <div style="overflow:hidden;height:100vw;">
+            <div class="container" style="overflow:hidden;">
               <iframe class="map" width="100%" height="100%" src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=3178%20Av.%20Maria%20Quiteria%20Feira%20de%20Santana%2C%20Bahia+(T%C3%ADtulo)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
               </iframe>
             <style>#gmap_canvas img{max-width:1005!important;background:none!important}</style>
@@ -385,14 +382,7 @@
       				</div>
       				<!-- Contact Details Column -->
       				</div>
-      				<div style="width:100px;margin-left:auto;margin-right:0px;color:rgba(255,255,255,0.5">
-      					Voxa: <a href="http://<?php echo $_SERVER['SERVER_NAME']; ?>/adm" target="_blank" >
-      						<span class="fa-stack fa-lg">
-      						  <i class="fa fa-square-o fa-stack-2x"></i>
-      						  <i class="fa fa-cube fa-stack-1x"></i>
-      						</span></i>
-      					</a>
-      				</div>
+
       	</div>
               <!-- /.row -->
     </section>

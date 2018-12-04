@@ -4,8 +4,8 @@
 	//include('conect.php');
 	//print_r($_SESSION);
  ?>
-<html><head>
-<title>Ibantec Web</title>
+<html>
+<head>
 <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,8 +28,8 @@
 		<!--link rel="stylesheet" href="../css/style.css"-->
 		<link rel="icon" href="favicon.ico" type="image/ico" />
     <link rel="shortcut icon" href="favicon.ico" />
-    <!--link rel="stylesheet" href="../css/painel.css"-->
-
+    <link rel="stylesheet" href="../css/painel.css">
+		<title>Fcar Emplacamentos</title>
 	<script>
 	jQuery(document).ready(function(){
 				var conteudo = jQuery('#conteudoAdm');
@@ -227,16 +227,14 @@
 	</script>
 </head>
 
-<body>
-<?php //print_r($_SESSION); ?>
-<div class="container=fluid" style="background-color:<?php echo $corMenu ?>;margin-top:-23px;">
-	<div class="container" style="border:0px orange dashed">
+<body><div class="lock" style="background-color:black;">
+	<div class="container" >
 		<div class="row" >
-			<div class="col-3" style="border:0px rgba(120,120,120,1.00) solid;height:120px;margin-left:auto;margin-right:auto;padding:0px">
-				<img style="" src="../images/logonix.png"  alt=""> </div>
-			<div class="col-6" style="border:0px rgba(120,120,120,1.00) solid;height:120px;margin-left:auto;margin-right:auto"></div>
-			<div class="col-3" style="height:120px;margin-left:auto;margin-right:auto;padding-top:10px;">
-				<a href="sair.php" class=" btn btn-outline-secondary btn-sm" style="float:right;margin-right:10px">Logoff</a>
+			<div class="col-3 barblack">
+				<img style="" src=""  alt=""> </div>
+			<div class="col-6" ></div>
+			<div class="col-3" >
+				<a href="sair.php" class=" btn btn-outline-secondary btn-sm float-right btn-logoff" >Logoff</a>
 			</div>
 		</div>
 	</div>

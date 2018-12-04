@@ -1,4 +1,3 @@
-
 <?php
 	include('protect.php');
 	include("globais.php");
@@ -45,7 +44,7 @@
 		$clientBut = $banco["but"];
 
 	?>
-	<!-- Atuação  -->
+	<!-- Início Menu paralelo  -->
 		 <div class="row" style="padding:4px;background:white">
 
 			 <div class="col-12" >
@@ -64,18 +63,14 @@
 						  <button  value="<?php echo $clientID; ?>" class="btn btn-outline-<?php echo $corMenuAdm; ?> listarosinter"><i class="fa fa-pencil" aria-hidden="true"></i>Listar OS	</button>
 					 </div>
 		 </div>
-		 <!-- /.row -->
+
 	<span><hr></span>
+
+	 <!-- /.fim Menu  Paralelo-->
+</span>
+<!-- Resultados internos carregadas  -->
 <div class="resultadointerno">
-     <!-- Atuação  -->
-        <div class="row" style="background:white;padding:12px">
-
-					<div class="col-12" >
-						<span class="spandate"><?php echo $clientLog;?></span>
-					</div>
-        </div>
         <!-- /.row -->
-
 		 <div class="container" style="background:white;padding-top:12px;padding-botton:12px">
 			 <form class="form" class="row" action="sendfile.php" method="post" accept-charset="utf-8" enctype="multipart/form-data"  >
 
@@ -137,4 +132,4 @@
 			?>
 	</div>
 			</div>
-					</span>
+<!-- /.fim de resultados internos -->

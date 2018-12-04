@@ -1,6 +1,10 @@
+<style>
+input{
+	margin:2px;
+}
+</style>
 	<?php
-	include('protect.php');
-	include("globais.php");
+	@include("globais.php");
 	//print_r($_POST);
 	@$id = $_POST['id'];
 	//@$id = $_POST['id'];
@@ -17,29 +21,24 @@
 		$atuacaoId = $banco['atuacao'];}
 		// echo $atuacaoId;
 	?>
-	<style>
-	input{
-		margin:2px;
-	}
-	</style>
+	<script src="osdetalhe.js"></script>
 	<div class="cabecalho"  style="background:white;padding-top:0px;border:1px red dashed;">
-
 			<?php
 				$sql = "SELECT * FROM `cliente` WHERE `id` = $atuacaoId";
 				$rsd = mysql_query($sql);
 				while ($banco = mysql_fetch_assoc($rsd))
 				{
-				$clientID = $banco["id"];
-				$clientNome = $banco["nome"];
-				$clientEmail = $banco["email"];
-				$clientCel = $banco["celular"];
-				$cleintSenha = $banco["senha"];
-				$clientRua = $banco["rua"];
-				$clientNumero = $banco["numero"];
-				$clientBairro = $banco["bairro"];
-				$clientCep = $banco["cep"];
-				$clientLog = $banco["log"];
-				$clientBut = $banco["but"];
+					$clientID = $banco["id"];
+					$clientNome = $banco["nome"];
+					$clientEmail = $banco["email"];
+					$clientCel = $banco["celular"];
+					$cleintSenha = $banco["senha"];
+					$clientRua = $banco["rua"];
+					$clientNumero = $banco["numero"];
+					$clientBairro = $banco["bairro"];
+					$clientCep = $banco["cep"];
+					$clientLog = $banco["log"];
+					$clientBut = $banco["but"];
 			?>
 		<!-- Atuação  -->
 		 <div class="row" style="padding:4px;background:white">
@@ -140,25 +139,11 @@
 	<span><hr></span>
 		<div class="resultadointerno" style="padding-top:8px">
 
-			<div class="container arquivos" style="background:white;padding-top:0px;border:0px red solid;">
-					<?php
-						$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $atuacaoId AND `view` = 1" ;
-						$rsd = mysql_query($sql);
-						$cor = "white";
-					while ($banco = mysql_fetch_assoc($rsd)){
-							$cliID = $banco["id"];
-							$cliNome = $banco["nome"];
-							$cliCargo = $banco["cargo"];
-							$cliDocuent = $banco["documento"];
-							$cliView = $banco["view"];
-							$cliObs = $banco["obs"];
-							$client = $banco["cliente"];
-					}
+			<div class="container" style="background:white;padding-top:0px;border:0px red solid;">
 
-					?>
 			</div>
 			<div class="container osdetalhe" style="background:white;padding-top:0px;border:0px yellow dashed;">
-					<script src="incluir.js"></script>
+
 				<table class="table table-striped table-bordered ">
 				<thead>
 					<tr>
@@ -169,6 +154,19 @@
 				</thead>
 				<tbody>
 					<?php
+								$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $atuacaoId AND `view` = 1" ;
+								$rsd = mysql_query($sql);
+								$cor = "white";
+							while ($banco = mysql_fetch_assoc($rsd)){
+									$cliID = $banco["id"];
+									$cliNome = $banco["nome"];
+									$cliCargo = $banco["cargo"];
+									$cliDocuent = $banco["documento"];
+									$cliView = $banco["view"];
+									$cliObs = $banco["obs"];
+									$client = $banco["cliente"];
+							}
+
 							$queryline = "SELECT * FROM `osdetalhe` WHERE `id_us`=$clientID AND `cod_os`=$cod_os";
 							$query = mysql_query($queryline);
 							$restult = mysql_num_rows($query);
@@ -190,21 +188,17 @@
 					</tr>
 					<?php
 						}
-
 						$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$osIdUsuario AND `cod_os`=$osCodigo";
 						$soma = mysql_query($querysoma);
 						$resultb = mysql_num_rows($soma);
-
 						while($dba = mysql_fetch_array($soma)){
 							$geral = $dba['geral'];
 						}
-
 					?>
 					<tr>
 						<th scope="row"></th>
 						<th class="text-right" >Total: R$ <?php echo $geral; ?></th>
 						<th class="text-left"></th>
-
 					</tr>
 				</tbody>
 			</table>
@@ -234,4 +228,5 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</div>
