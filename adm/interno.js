@@ -2,18 +2,15 @@
 $(".uploadinterno").click(function(){
     var id = $(this).val();
     $('#paging_button').hide();
-  
     $.post("datacliupload_interno.php",
         {
           id:id,
         },
         function(data, status){
-          $(".resultadointerno").load("datacliupload_interno.php");
+           $("#links").load("datacliupload.php");
           $('#paging_button').hide();
         });
       });
-
-
 //Editar
 $(".editarinterno").click(function(){
    var id = $(this).val();
@@ -24,7 +21,7 @@ $(".editarinterno").click(function(){
         },
         function(data, status){
         //alert(data);
-        $(".resultadointerno").load("cliente_edite_interno.php");
+        $("#links").load("cliente_edite.php");
         $('#paging_button').hide();
         });
   });
@@ -50,17 +47,15 @@ $(".editarinterno").click(function(){
                 });
         }
     });
-
     //Ordem de Serviço lista
     $(".listarosinter").click(function(){
     var id = $(this).val();
-
     $.post("datalistordeminter.php",
        {
          id:id,
        },
        function(data, status){
-         $(".resultadointerno").load("datalistordeminter.php");
+      $("#links").load("datalistordem.php");
          $('#paging_button').hide();
        });
     });

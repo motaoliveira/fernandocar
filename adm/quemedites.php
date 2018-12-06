@@ -93,33 +93,37 @@ $(document).ready(function(){
 	<h3 class="card-header">Quem Somos</h3>
 
 	 <div class="card-block">
-	  <div class="col-8">
-	  <img class="img-fluid" src="../quemsomos/1/img/<?php echo $img_db; ?>" />
-	  </div>
+
     <div class="col-12" style="margin-top:10px">
 
     <form role="form" action="quemsomos_update.php" enctype="multipart/form-data" method="post">
 
 		<input name="hide" type="hidden" value="<?php echo $atuacaoId ?>" />
-		<div class="col-12 form-group" style="border:0px #000 dashed;">
+		<div class="col-8 form-group" style="border:0px #000 dashed;">
 				<input class="form-control theme-secondary" type="text" id="titulo"  placeholder="" name="titulo" value="<?php echo $titulo_db; ?>">
 		</div>
 
-        <div class="col-12">
-        <br class="visible-sm visible-xs">
-            <div class="form-group">
-                <input type="file" name="exemplo" class="btn btn-default btn-block "  id="arq">
-            </div>
-        </div>
-        <div class="col-12"> <p>Imagem: 500 x 340 px</p></div>
-       <div class="col-12 form-group">
+
+
+       <div class="col-12 form-group" style="display:none">
             <input class="form-control theme-secondary" type="text" id="descricao"  placeholder="" name="descricao" value="<?php echo $descri_db; ?>">
-
         </div>
-        <div class="col-12" style="height:auto;">
-        <textarea name="tex" id="tex" cols="90" rows="12" ><?php echo $texto_db; ?></textarea>
+<div class="row">
+        <div class="col-8" style="height:auto;">
+        	<textarea name="tex" id="tex" cols="90" rows="12" ><?php echo $texto_db; ?></textarea>
         </div>
-
+				<div class="col-4">
+					<h5> Imagem:</h5>
+				 <img class="img-fluid" src="../quemsomos/1/img/<?php echo $img_db; ?>" />
+				 <div class="col-12"> <p>Imagem: 500 x 340 px</p></div>
+				 <div class="col-12">
+				 <br class="visible-sm visible-xs">
+						 <div class="form-group">
+								 <input type="file" name="exemplo" class="btn btn-outline-secondary btn-block "  id="arq">
+						 </div>
+				 </div>
+			 </div>
+</div>
         <div class="col-12">
         <br />
             <div class="form-group" >

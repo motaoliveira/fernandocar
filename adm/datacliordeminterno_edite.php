@@ -7,19 +7,18 @@ input{
 	@include("globais.php");
 	//print_r($_POST);
 	@$id = $_POST['id'];
-	//@$id = $_POST['id'];
+	@$os = $_POST['os'];
+
 	if(@$_POST){
-	mysql_query("UPDATE `edicao` SET `atuacao` = '$id' WHERE `edicao`.`id` = 1;");
-	}
-	else{
+	mysql_query("UPDATE `edicao` SET `atuacao` = '$id', `projeto` = '$os' WHERE `edicao`.`id` = 1;");
+	}else{
 	//echo "carregue a id ";
 	$sql = "SELECT * FROM `edicao` WHERE `id`=1";
 	$query = mysql_query($sql);
 	while ($banco = mysql_fetch_assoc($query))
 	{
-	//echo "entrou aqui";
-		$atuacaoId = $banco['atuacao'];}
-		// echo $atuacaoId;
+		$atuacaoId = $banco['atuacao'];
+		$atuacaoOs = $banco['projeto'];
 	?>
 	<script src="osdetalhe.js"></script>
 	<div class="cabecalho"  style="background:white;padding-top:0px;border:0px red dashed;">
@@ -60,28 +59,8 @@ input{
 		 	<?php } ?>
 	<span><hr></span>
 		<?php
-		$sql = "SELECT * FROM `ordserv` WHERE `id` = (SELECT MAX(`id`) FROM `ordserv`)";
-		$rsd = mysql_query($sql);
-		if(!$rsd){
-			$cod_os=0000;
-		}else{
-		while ($banco = mysql_fetch_assoc($rsd))
-			{
-			$cod_os = $banco["cod_os"];
-			}
-		}
-			$cod_os++;
-			mysql_query("UPDATE `edicao` SET `projeto` = '$cod_os' WHERE `edicao`.`id` = 1;");
-
-			$id_us = $clientID;
-			$data= date('d/m/Y');
-			$proprietario = $clientNome;
-			$clientCel;
-			mysql_query("INSERT INTO `ordserv` (`id_us`, `data_origem`, `cod_os`, `placa`, `marca`, `cor`, `renavan`, `proprietario`, `telefone`) VALUES ('$id_us', '$data', '$cod_os', NULL, NULL, NULL, NULL, '$proprietario', '$clientCel');");
-			mysql_query("INSERT INTO `osdetalhe` (`id_us`, `cod_os`, `id_serv`, `servico`, `quantidade`, `valor`) VALUES ('$id_us', '$cod_os', NULL, NULL, NULL, NULL);");
-
-
-				$sqlline= mysql_query("SELECT * FROM `ordserv` WHERE `cod_os` =$cod_os ");
+			//echo $atuacaoOs;
+				$sqlline= mysql_query("SELECT * FROM `ordserv` WHERE `cod_os` =$atuacaoOs ");
 				while ($bank = mysql_fetch_array($sqlline))
 					{
 						$id_us=$bank['id_us'];
@@ -93,6 +72,8 @@ input{
 						$renavan= $bank['renavan'];
 						$proprietario=$bank['proprietario'];
 						$telefone=$bank['telefone'];
+
+						///echo $marca;
 					}
 
 		?>
@@ -102,13 +83,13 @@ input{
 						<strong>Data:</strong>
 						</div>
 						<div class="col" >
-							<input type="text" readonly class="form-control data" id="data" placeholder="<?php echo $data; ?>" >
+							<input type="text" disabled class="form-control data" id="data" placeholder="<?php echo $data; ?>" >
 						</div>
 						<div class="col-2" >
 							<strong>Código OS:</strong>
 						</div>
 						<div class="col" >
-							<input type="text" readonly class="form-control cod_os " id="oscod" placeholder="<?php echo $cod_os; ?>" >
+							<input type="text"  class="form-control cod_os " id="oscod" placeholder="<?php echo $cod_os; ?>" disabled>
 						</div>
 				</div>
 				<div class="row" >
@@ -116,13 +97,13 @@ input{
 						<strong>Placa:</strong>
 						</div>
 						<div class="col" >
-							<input type="text" class="form-control placa" id="placa" placeholder="<?php echo $placa; ?>" >
+							<input type="text" class="form-control placa" id="placa" placeholder="<?php echo $placa; ?>" value="<?php echo $placa; ?>" disabled>
 						</div>
 						<div class="col-2" >
 							<strong>Marca/Modelo:</strong>
 						</div>
 						<div class="col" >
-							<input type="text" class="form-control modelo" id="modelo" placeholder="<?php echo $marca; ?>" >
+							<input type="text" class="form-control modelo" id="modelo" placeholder="<?php echo $marca; ?>" value="<?php echo $marca; ?>" disabled>
 						</div>
 				</div>
 				<div class="row" >
@@ -130,30 +111,33 @@ input{
 						<strong>Cor:</strong>
 						</div>
 						<div class="col" >
-							<input type="text" class="form-control cor" id="cor" placeholder="<?php echo $cor; ?>" >
+							<input type="text" class="form-control cor" id="cor" placeholder="<?php echo $cor; ?>" value="<?php echo $cor; ?>" disabled>
 						</div>
 						<div class="col-2" >
 						<strong>Renavan:</strong>
 						</div>
 						<div class="col" >
-							<input type="text" class="form-control renavan" id="renavan" placeholder="<?php echo $renavan; ?>" >
+							<input type="text" class="form-control renavan" id="renavan" placeholder="<?php echo $renavan; ?>" value="<?php echo $renavan; ?>" disabled>
 						</div>
 				</div>
 				<div class="row" >
 						<div class="col-2" >
 						<strong>Proprietário: </strong></div>
 						<div class="col-10" >
-						<input type="text" class="form-control proprietario" id="proprietario" placeholder="<?php echo $proprietario; ?>" >
+						<input type="text" class="form-control proprietario" id="proprietario" placeholder="<?php echo $proprietario; ?>" disabled>
 						</div>
 				</div>
 				<div class="row" >
 						<div class="col-2" >
 						<strong>Telefone:</strong></div>
 						<div class="col-10" >
-						<input type="text" class="form-control celular" id="celular" placeholder="<?php echo $telefone; ?>" >
+						<input type="text" class="form-control celular" id="celular" placeholder="<?php echo $telefone; ?>" disabled>
 						</div>
 				</div>
 			</div>
+			<?php
+		}
+		?>
 	<span><hr></span>
 		<div class="resultadointerno" style="padding-top:8px">
 
@@ -172,20 +156,7 @@ input{
 				</thead>
 				<tbody>
 					<?php
-								$sql = "SELECT * FROM `clientefile` WHERE `cliente` = $atuacaoId AND `view` = 1" ;
-								$rsd = mysql_query($sql);
-								$cor = "white";
-							while ($banco = mysql_fetch_assoc($rsd)){
-									$cliID = $banco["id"];
-									$cliNome = $banco["nome"];
-									$cliCargo = $banco["cargo"];
-									$cliDocuent = $banco["documento"];
-									$cliView = $banco["view"];
-									$cliObs = $banco["obs"];
-									$client = $banco["cliente"];
-							}
-
-							$queryline = "SELECT * FROM `osdetalhe` WHERE `id_us`=$clientID AND `cod_os`=$cod_os";
+							$queryline = "SELECT * FROM `osdetalhe` WHERE `id_us`=$atuacaoId AND `cod_os`=$atuacaoOs";
 							$query = mysql_query($queryline);
 							$restult = mysql_num_rows($query);
 
@@ -201,12 +172,12 @@ input{
 						<input type="hidden" value="<?php echo $cod_os ?>" class="oscod">
 					<tr>
 						<th scope="row"><?php echo $osServico; ?></th>
-						<th class="text-right" ><?php if(!$osValor){echo "R$".$osValor;} ?></th>
-						<td class="text-right" ><button value="<?php echo $osIdServ; ?>" class="btn btn-link retirar" active> - </button></td>
+						<th class="text-right"><?php echo "R$".$osValor; ?></th>
+						<td class="text-right"><button value="<?php echo $osIdServ; ?>" class="btn btn-link retirar" active> - </button></td>
 					</tr>
 					<?php
 						}
-						$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$osIdUsuario AND `cod_os`=$cod_os";
+						$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$atuacaoId AND `cod_os`=$atuacaoOs";
 						$soma = mysql_query($querysoma);
 						while($dba = mysql_fetch_array($soma)){
 							$geral = $dba['geral'];
@@ -220,15 +191,19 @@ input{
 				</tbody>
 			</table>
 			</div>
-			<?php
-		}
-		?>
+
 		</div>
 		<br>
+			<input type="hidden" class="idusuario" value="<?php echo $atuacaoId; ?>" >
+		<?php
+
+	}
+	?>
 		<div class="container manipulador no-print">
 			<div class="row">
 				<div class="col-6">
-						<input type="hidden" class="idusuario" value="<?php echo $osIdUsuario; ?>" >
+
+
 						<input type="text" class="form-control col-10 servico" id="servico" placeholder="Serviço">
 				</div>
 				<div class="col">

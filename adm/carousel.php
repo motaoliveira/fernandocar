@@ -19,7 +19,7 @@ $(document).ready(function(){
 		//$.post("carousel_ins.php", { linkbaner:linkbaner2 , carousel:carousel2, arq:arq2},function(get_retorno) {
 		 // alert(get_retorno);
 		  // });
-		  alert(linkbaner2);
+		  //alert(linkbaner2);
     });
 
 
@@ -55,6 +55,8 @@ $(document).ready(function(){
 													$idact = $act['id'];
 													$nomeact = $act['banner'];
 													$imgact = $act['img'];
+													$tituloact = $act['titulo'];
+								 					$descricaoact= $act['descricao'];
 													$linkact = $act['link'];
 													$ordemkact = $act['ordem'];
 
@@ -66,12 +68,24 @@ $(document).ready(function(){
 								</select>
 							</div>
   								<div class="col-12" >
-								<br class="visible-sm visible-xs">
-									<div class="form-group" >
-										<input type="file" name="exemplo" class="btn btn-default btn-block " id="arq">
+										<input type="hidden" name="antigotitulo"  value="<?php echo $tituloact ?>">
+										<input type="hidden" name="antigodescricao"  value="<?php echo $descricaoact ?>">
+										<input type="hidden" name="antigonome"  value="<?php echo $nomeact ?>">
+										<input type="hidden" name="antigolink"  value="<?php echo $linkact ?>">
+										<div class="form-group" >
+										<br>
+										<input type="file" name="exemplo" class="btn btn-outline-secondary btn-block " id="arq">
 									</div>
 								</div>
-                               <div class="col-12 form-group" >
+								<div class="col-12 form-group" >
+									<input class="form-control theme-secondary" type="text" id="titulo"  placeholder="Titulo" name="titulo" value="">
+
+								</div>
+								<div class="col-12 form-group" >
+									<input class="form-control theme-secondary" type="text" id="descricao"  placeholder="Descrição" name="descricao" value="">
+
+								</div>
+                <div class="col-12 form-group" >
 									<input class="form-control theme-secondary" type="text" id="link"  placeholder="Insira o link do Banner" name="link" value="">
 
 								</div>
@@ -125,12 +139,15 @@ $(document).ready(function(){
 												$idact = $act['id'];
 												$nomeact = $act['banner'];
 												$imgact = $act['img'];
+												$tituloact = $act['titulo'];
+												$descricaoact= $act['descricao'];
 												$linkact = $act['link'];
 												$ordemkact = $act['ordem'];
 
 									?>
 			<div class="col-12">
-				<img class="img-fluid" src="../images/<?php echo $imgact; ?>"/><br></div>
+
+				<img class="img-fluid" src="../image/<?php echo $imgact; ?>"/><br></div>
 				<div class="col-12">
 					<a class="btn btn-secondary disabled"><?php echo $nomeact[7]; ?></a><br>
 				</div>

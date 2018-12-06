@@ -2,10 +2,6 @@
 <?php
 	//include('conect.php');
 	include('globais.php');
-
-		/*echo $corMenuAdm;*/ if($corMenuAdm=="secundary"){
-		$corMenuAdm = "default";
-	}
 ?>
 
 <script src="tinymce/js/tinymce/tinymce.js"></script>
@@ -66,45 +62,47 @@ $(document).ready(function(){
 
 	<h3 class="card-header">Inserir Serviço</h3>
 
-    <div class="card-block">
 
 
-    <div class="col-12">
+<div class="card-body" >
 
+<ul class="list-group list-group-flush">
     <form role="form" action="atuacao_ins.php" enctype="multipart/form-data" method="post">
 
     <div class="col-12 form-group" style="border:0px #000 dashed;">
         <input class="form-control theme-secondary" type="text" id="titulo"  placeholder="Titulo " name="titulo" value="">
     </div>
 
-        <div class="col-12">
+        <li class="col-12 list-group-item">
             <div class="form-group">
-                <input type="file" name="exemplo" class="btn btn-default btn-block "  id="arq">
+                <input type="file" name="exemplo" class="btn btn-default btn-block "  id="arq"> <p>Imagem: 400 x 227 px</p>
             </div>
-        </div>
-        <div class="col-12"> <p>Imagem: 400 x 227 px</p></div>
-       <div class="col-12   form-group">
+        </li>
+
+       <li class="col-12   form-group list-group-item">
             <input class="form-control theme-secondary" type="text" id="descricao"  placeholder="Descrição" name="descricao" value="">
 
-        </div>
-        <div class="col-12" style="height:auto;">
+        </li>
+        <div class="col-12" style="height:auto;display:none">
         <textarea name="tex" id="tex" cols="90" rows="12"></textarea>
         </div>
-
-        <div class="col-12">
+				<input type="hidden" name="tex" value="1">
+        <li class="col-12 list-group-item">
         <br />
             <div class="form-group" >
-                <button type="submit" class="btn btn-<?php echo $corMenuAdm; ?>" id="sendAtua">
+                <button type="submit" class="btn btn-outline-<?php echo $corMenuAdm; ?>" id="sendAtua">
                     <span class="glyphicon glyphicon-ok"></span> Aplicar
                 </button>
             </div>
-        </div>
+        </li>
 
     </form>
 
-    </div>
+	</ul>
 
     </div>
+
+
 </div>
 </div>
 </div>

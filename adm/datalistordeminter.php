@@ -57,7 +57,7 @@
 		      <td><?php echo $osDate; ?></td>
 		      <td><?php echo $osProprietario; ?></td>
 					<td><?php echo $osPlaca; ?></td>
-		      <td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> deletaross" value="<?php echo $osCodigo; ?>"  >Delete</button></td>
+		      <td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> deletaros" value="<?php echo $osCodigo; ?>"  >Delete</button></td>
 					<td><button class="btn btn-outline-<?php echo $corMenuAdm; ?> editaross" value="<?php echo $osCodigo; ?>"  >Editar</button></td>
 		    </tr>
 				<?php

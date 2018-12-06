@@ -83,51 +83,42 @@ $(document).ready(function(){
 		$data_db	=	$db['data'];
 		$hora_db	=	$db['hora'];
 
-?>   <div class="row">
-     <div class="col">
-		<img class="img-fluid" src="../atuacao/<?php echo $id_db; ?>/img/<?php echo $img_db; ?>" />
-	  </div>
-	  <div class="col"><br><h4>Tamanho padrão a imagem.</h4>
-		<p>Imagem: 400 x 227 px</p>
-	  </div>
+?>
+  <div class="card-body">
+
+		<div class="col-8"><img class="img-fluid" src="../atuacao/<?php echo $id_db; ?>/img/<?php echo $img_db; ?>" /></di>
+		<h4 class="card-title"><?php echo $titulo_db ?></h4>
+	 	<p class="card-text"><?php echo $descri_db ?></p>
+    <!--a href="#" class="btn btn-outline-secondary">Go somewhere</a-->
+  </div>
+
+<form role="form" action="atuacao_update.php" enctype="multipart/form-data" method="post">
+	<div class="card-body">
+
+    <p class="card-text"> Titulo</p>
+		<input name="hide" type="hidden" value="<?php echo $atuacaoId ?>" />
+		<input class="form-control theme-secondary" type="text" id="titulo"  placeholder="" name="titulo" value="<?php echo $titulo_db; ?>">
+    <!--a href="#" class="btn btn-primary">Go somewhere</a-->
+  </div>
+	<div class="card-body">
+
+    <p class="card-text"> Imagem 225x80px</p>
+		<input type="file" name="exemplo" class="btn btn-default btn-block "  id="arq">
 	</div>
 
-    <form role="form" action="atuacao_update.php" enctype="multipart/form-data" method="post">
+		<div class="card-body">
 
-	<div class="col">
-		<input name="hide" type="hidden" value="<?php echo $atuacaoId ?>" />
-        <input class="form-control theme-secondary" type="text" id="titulo"  placeholder="" name="titulo" value="<?php echo $titulo_db; ?>">
-    </div>
+		<p class="card-text"> Descrição</p>
+		<input class="form-control theme-secondary" type="text" id="descricao"  placeholder="" name="descricao" value="<?php echo $descri_db; ?>">
+	</div>
 
-        <div class="col">
-            <div class="form-group">
-                <input type="file" name="exemplo" class="btn btn-default btn-block "  id="arq">
-            </div>
-        </div>
-
-
-       <div class="col form-group">
-            <input class="form-control theme-secondary" type="text" id="descricao"  placeholder="" name="descricao" value="<?php echo $descri_db; ?>">
-
-        </div>
-        <div class="col" style="height:auto;">
-        <textarea name="tex" id="tex" cols="90" rows="12" ><?php echo $texto_db; ?></textarea>
-        </div>
-
-        <div class="col">
-        <br />
-            <div class="form-group" >
-                <button type="submit" class="btn btn-<?php echo $corMenuAdm; ?>" id="sendAtua">
-                    <span class="glyphicon glyphicon-ok"></span> Enviar
-                </button>
-            </div>
-        </div>
-
-    </form>
-
-
-
-
+	<div class="card-body">
+		<input type="hidden" name="tex" value="1">
+		<button type="submit" class="btn btn-outline-<?php echo $corMenuAdm; ?>" id="sendAtua">
+				<span class="glyphicon glyphicon-ok"></span> Enviar
+		</button>
+	</div>
+	</form>
          <?php
 	}
 

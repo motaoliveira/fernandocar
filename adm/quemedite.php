@@ -95,7 +95,7 @@ $(document).ready(function(){
 	<h3 class="card-header">Quem Somos</h3>
 
 	 <div class="card-block">
-	  <div class="col-8">
+	  <div class="col-3">
 	  <img class="img-fluid" src="../quemsomos/1/img/<?php echo $img_db; ?>" />
 	  </div>
     <div class="col-12" style="margin-top:10px">

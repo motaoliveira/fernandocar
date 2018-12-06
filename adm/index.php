@@ -47,7 +47,7 @@
 <body>
 
   <form action="logar.php" class="form-signin" method="post" target="_top" name="form" id="form">
-    <img class="mb-4" src="../image/logofcar.png" alt=""  height="210">
+    <img class="mb-4" src="../image/logofcarorc-pb.png" height="190">
     <h1 class="h3 mb-3 font-weight-normal"></h1>
     <label for="inputEmail" class="sr-only">Email address</label>
     <input type="email" name="inputEmail" id="inputEmail" class="form-control  bg-dark" placeholder="Email address" required autofocus>

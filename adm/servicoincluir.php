@@ -1,18 +1,25 @@
 <?php
 			include('protect.php');
 			include("globais.php");
-
 				@$osusuario = $_POST['osusuario'];
 				@$oscod = $_POST['oscod'];
 				@$servico = $_POST['servico'];
 				@$valor = $_POST['valor'];
 				@$id = $_POST['id'];
 
+				@$placa = $_POST['placa'];
+				@$modelo = $_POST['modelo'];
+				@$cor = $_POST['cor'];
+				@$renavan = $_POST['renavan'];
+//print_r($_POST);
+	//echo $osusuario;
 			if($_POST)
 			{
-				print_r($_POST);
-				mysql_query("UPDATE `edicao` SET `atuacao` = '$osusuario', `projeto` = '$oscod' WHERE `edicao`.`id` = 1;");
+
+
 				mysql_query("INSERT INTO `osdetalhe` (`id_us`, `cod_os`, `id_serv`, `servico`, `quantidade`, `valor`) VALUES ('$osusuario', '$oscod', '', '$servico', NULL, '$valor');");
+				mysql_query("UPDATE `ordserv` SET `placa` = '$placa', `marca` = '$modelo', `cor` = '$cor', `renavan` = '$renavan' WHERE `ordserv`.`cod_os` = $oscod;");
+
 			}
 			else
 			{
@@ -23,9 +30,6 @@
 				$osus = $dbank['atuacao'];
 				$osco= $dbank['projeto'];
 			}
-
-
-
 	?>
 	<script src="excluir.js"></script>
 		<table class="table table-striped">
@@ -61,6 +65,8 @@
 			</tr>
 			<?php
 				}
+				/*echo $osIdUsuario."<br>";
+				echo $osco."<br>"; echo $placa."<br>";echo $modelo."<br>";echo $cor; */
 				$querysoma = "SELECT SUM(valor) AS 'geral' FROM `osdetalhe` WHERE `id_us`=$osIdUsuario AND `cod_os`=$osCodigo";
 				$soma = mysql_query($querysoma);
 				while($dba = mysql_fetch_array($soma)){

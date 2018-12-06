@@ -3,7 +3,7 @@
 <script>
 	$(".cadastrar").click(function(){
 		var nome = $("#nome").val();
-		var celular = $("#cel").val();;
+		var celular = $("#telefone").val();;
 		var rua = 1;
 		var numero = $("#numero").val();
 		var bairro = 1;
@@ -75,7 +75,7 @@
 
 
 					<div class="form-group col-12">
-					  <label for="usrname"><span class="glyphicon glyphicon-user"></span> Nome</label>
+					  <label for="username"><span class="glyphicon glyphicon-user"></span> Nome</label>
 					  <input type="text" class="form-control " id="nome" placeholder="">
 
 					  <label for="cel"><span class="glyphicon glyphicon-phone"></span> Celular</label>

@@ -7,7 +7,7 @@ print_r ($_POST);
 //print_r ($_FILES);
 	$id = $_POST['hide'];
 	$nome = $_POST['cliente'];
-	$cel = 1;
+	$cel = $_POST['telefone'];
 	$email = 1;
 	$senha = 1;
 	$rua = 1;
@@ -31,7 +31,7 @@ print_r ($_POST);
 		$name = $_FILES['exemplo']['name'];
 	}
 	if(isset($_POST)==1){
-	mysql_query("UPDATE `u644261243_av`.`cliente` SET `nome` = '$nome', `email` = '$email', `celular` = '$cel', `login` = '$login', `senha` = '$senha', `rua` = '$rua', `numero` = '$numero', `bairro` = '$bairro', `cep` = 'cep', `but` = '$name' WHERE `cliente`.`id` = $id;");
+	mysql_query("UPDATE `cliente` SET `nome` = '$nome', `email` = '$email', `celular` = '$cel', `login` = '$login', `senha` = '$senha', `rua` = '$rua', `numero` = '$numero', `bairro` = '$bairro', `cep` = 'cep', `but` = '$name' WHERE `cliente`.`id` = $id;");
 	//
 						};
 

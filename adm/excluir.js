@@ -5,7 +5,7 @@ $(".excluir").click(function(){
 	var servico = $(".servico").val();
 	var valor = $(".valor").val();
 
-alert(id+' '+osusuario+' '+oscod+' Excluindo')
+//alert(id+' '+osusuario+' '+oscod+' Excluindo')
 	$.post("servicoexcluir.php",
 		 {
 			 id:id,
@@ -14,7 +14,7 @@ alert(id+' '+osusuario+' '+oscod+' Excluindo')
 		 },
 		 function(data, status){
 			 $(".osdetalhe").load("servicoexcluir.php");
-			 	alert(data+status);
+			 //	alert(data+status);
 			 $('#paging_button').hide();
 		 });
 		});

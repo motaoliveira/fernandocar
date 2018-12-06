@@ -14,6 +14,9 @@ body{
       position: fixed;
       z-index: 9999;
 }
+.paddingtop30{
+  padding-top:30px;
+}
 .pad{
       padding:24px;
       border: solid 0px white;

@@ -86,14 +86,14 @@
 									<input class="form-control theme-secondary" type="text" id="cliente" name="cliente"  placeholder="" name="cliente" value="<?php echo $clientNome; ?>" >
 									<br>
 								</div>
-								<!--div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
-								<p>Email</p>
+								<div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+								<p>Telefone:</p>
 								</div>
 								<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10" >
-								<input class="form-control theme-secondary" type="text" id="email" name="email"  placeholder="" value="<?php echo $clientEmail; ?>" >
+								<input class="form-control theme-secondary" type="text" id="telefone" name="telefone"  placeholder="" value="<?php echo $clientCel; ?>" >
 								<br>
 								</div>
-								<div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
+								<!--div class="col-md-2 col-lg-2 col-sm-2 col-xs-2">
 								<p>Senha</p>
 								</div>
 								<div class="col-md-10  col-lg-10 col-sm-10 col-xs-10" >

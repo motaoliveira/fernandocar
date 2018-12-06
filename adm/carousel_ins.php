@@ -10,8 +10,20 @@ $file = $_FILES['exemplo'];
 //print_r($_SESSION);
 $linknovo = $file['name'];
 $select = $_POST['carousel'];
-$linkurl = $_POST['link'];
 
+$antigotitulo = $_POST['antigotitulo'];
+$antigodescricao = $_POST['antigodescricao'];
+$antigonome = $_POST['antigonome'];
+$antigolink = $_POST['antigolink'];
+
+$linkurl = $_POST['link'];
+$titulo = $_POST['titulo'];
+$descricao = $_POST['descricao'];
+
+
+if(!$linknovo){
+	$linknovo =$antigonome;
+}
 @$windows = $_POST['window'];
 if(!$_POST['window']){
 	$windows = "_self";
@@ -21,7 +33,7 @@ if(!$_POST['window']){
 
 
 if(isset($_POST)==1){
-	mysql_query("UPDATE `carousel` SET `id` = '$select[7]', `banner` = '$select', `img` = '$linknovo', `link` = '$linkurl', `ordem` = '$windows' WHERE `carousel`.`id` = $select[7];");
+	mysql_query("UPDATE `carousel` SET `banner` = '$select', `img` = '$linknovo', `titulo` = '$titulo', `descricao` = '$descricao', `link` = '$linkurl', `ordem` = '$windows' WHERE `carousel`.`id` = $select[7];");
 
 };
 

@@ -1,8 +1,16 @@
 //Ordem de Serviço lista
 
 $(".editaross").click(function(){
-  var id = $(this).val();
-  alert("edits"+id);
+  var os = $(this).val();
+  var id = $(this).attr("id");
+  //alert("OS"+os+"ID"+id);
+
+  $.post("datacliordeminterno_edite.php", { os:os, id:id },
+  function(data, status){
+    $(".resultadointerno").load("datacliordeminterno_edite.php");
+    $('#paging_button').hide();
+    //alert("Dados: " + data + "\nStatus: " + status);
+  });
   /*$.post("editeos.php",
      {
        id:id,

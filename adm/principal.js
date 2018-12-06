@@ -2,7 +2,7 @@
     $(".upload").click(function(){
      var id = $(this).val();
     $('#paging_button').hide();
-  
+
     $.post("datacliupload.php",
          {
            id:id
@@ -44,7 +44,6 @@
             },
             function(data, status)
             {
-              //alert(data);
               $("#links").load("cliente_edite.php");
               $('#paging_button').hide();
             });

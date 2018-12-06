@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Dez-2018 às 07:42
+-- Generation Time: 04-Dez-2018 às 15:27
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 5.6.38
 
@@ -235,7 +235,11 @@ INSERT INTO `cliente` (`id`, `nome`, `email`, `celular`, `login`, `senha`, `rua`
 (59, 'Fernando Pessoa', '1', '1', 'login', '1', '1', '97435902500', '1', '1', '1', '1', '', 'avatar.jpg', 0),
 (60, 'Maria Mota Xaviers', '1', '1', '', '1', '1', '78964259', '1', 'cep', '1', '1', '', 'avatar.jpg', 0),
 (61, 'Joanna Dark', '1', '1', '', '1', '1', '98756547DC', '1', 'cep', '1', '1', '', 'WhatsApp-Image-2018-09-17-at-22.15.37-400x450.jpeg', 0),
-(62, 'Maria do Carmo', '1', '75 91428548', 'login', '1', '1', '9798778954', '1', '1', '1', '1', '', 'avatar.jpg', 0);
+(62, 'Maria do Carmo', '1', '75 91428548', 'login', '1', '1', '9798778954', '1', '1', '1', '1', '', 'avatar.jpg', 0),
+(63, 'Marileusa Oliveira dos Santos', '1', '1', '', '1', '1', '987987987987', '1', 'cep', '1', '1', '', 'avatar.jpg', 0),
+(64, 'José Farias de Azevedo', '1', '758697488', 'login', '1', '1', '87456987234', '1', '1', '1', '1', '', 'avatar.jpg', 0),
+(65, 'Mariposa Livre do Casulo', '1', '1', '', '1', '1', '758987585/0001-85', '1', 'cep', '1', '1', '', 'avatar.jpg', 0),
+(66, 'Escova de Cabelo Boa', '1', '75 98685.8757', 'login', '1', '1', '87589587458', '1', '1', '1', '1', '', 'avatar.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -275,7 +279,8 @@ INSERT INTO `clientefile` (`id`, `nome`, `cargo`, `documento`, `view`, `obs`, `c
 (15, 'Sérgio Mota', 'Área', '1754790-N.JPG.jpeg', 1, 'obs', 53),
 (16, 'Identidade', '', 'Software-Quality-Assurance-med.jpg.jpeg', 0, 'obs', 58),
 (17, 'Identidade', '', '47117536_937768153088607_5495120770709323776_n.jpg.jpeg', 1, 'obs', 61),
-(18, 'cpf', '', '46977852_206613593574177_3558920441038897152_n.jpg.jpeg', 1, 'obs', 61);
+(18, 'cpf', '', '46977852_206613593574177_3558920441038897152_n.jpg.jpeg', 1, 'obs', 61),
+(19, 'errrrtrt', '', '14.jpg.jpeg', 0, 'obs', 63);
 
 -- --------------------------------------------------------
 
@@ -377,7 +382,7 @@ CREATE TABLE `edicao` (
 --
 
 INSERT INTO `edicao` (`id`, `atuacao`, `projeto`, `imagens`) VALUES
-(1, '62', '8600', '1');
+(1, '66', '8623', '1');
 
 -- --------------------------------------------------------
 
@@ -462,23 +467,12 @@ CREATE TABLE `ordserv` (
 
 INSERT INTO `ordserv` (`id`, `id_us`, `data_origem`, `cod_os`, `placa`, `marca`, `cor`, `renavan`, `proprietario`, `telefone`) VALUES
 (1, 61, '29/11/2018', '8586', 'JYC6892', 'Celta Wind', 'Cinza', '789846542324', 'Sérgio Mota Oliveira', '75 991429009'),
-(19, 61, '02/12/2018', '8587', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(20, 61, '02/12/2018', '8588', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(21, 61, '02/12/2018', '8589', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(22, 61, '02/12/2018', '8590', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(23, 61, '02/12/2018', '8591', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(24, 61, '02/12/2018', '8592', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(25, 61, '02/12/2018', '8593', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(26, 61, '02/12/2018', '8594', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(27, 61, '02/12/2018', '8595', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(28, 61, '02/12/2018', '8596', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(29, 61, '02/12/2018', '8597', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(30, 61, '02/12/2018', '8598', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(31, 61, '02/12/2018', '8599', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(32, 61, '02/12/2018', '8600', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(33, 61, '02/12/2018', '8601', NULL, NULL, NULL, NULL, 'Joanna Dark', '1'),
-(34, 62, '02/12/2018', '8602', NULL, NULL, NULL, NULL, 'Maria do Carmo', '75 91428548'),
-(35, 62, '02/12/2018', '8603', NULL, NULL, NULL, NULL, 'Maria do Carmo', '75 91428548');
+(36, 62, '02/12/2018', '8604', NULL, NULL, NULL, NULL, 'Maria do Carmo', '75 91428548'),
+(51, 62, '03/12/2018', '8619', NULL, NULL, NULL, NULL, 'Maria do Carmo', '75 91428548'),
+(52, 63, '03/12/2018', '8620', NULL, NULL, NULL, NULL, 'Marileusa Oliveira dos Santos', '1'),
+(53, 63, '03/12/2018', '8621', NULL, NULL, NULL, NULL, 'Marileusa Oliveira dos Santos', '1'),
+(116, 66, '03/12/2018', '8622', NULL, NULL, NULL, NULL, 'Escova de Cabelo Boa', '75 98685.8757'),
+(118, 66, '03/12/2018', '8623', NULL, NULL, NULL, NULL, 'Escova de Cabelo Boa', '75 98685.8757');
 
 -- --------------------------------------------------------
 
@@ -528,33 +522,24 @@ CREATE TABLE `osdetalhe` (
 INSERT INTO `osdetalhe` (`id_us`, `cod_os`, `id_serv`, `servico`, `quantidade`, `valor`) VALUES
 (61, '8586', 3, 'Serviço 3', NULL, '20.00'),
 (61, '8586', 17, 'wqerwer', NULL, '33.00'),
-(61, '8587', 46, NULL, NULL, NULL),
-(61, '8587', 47, 'sERGIO', NULL, '6000.00'),
-(61, '8587', 48, 'sERGIO', NULL, '60.00'),
-(61, '8587', 49, '', NULL, '60.00'),
-(61, '8588', 50, NULL, NULL, NULL),
-(61, '8589', 51, NULL, NULL, NULL),
-(61, '8590', 52, NULL, NULL, NULL),
-(61, '8591', 53, NULL, NULL, NULL),
-(61, '8591', 54, 'sergio', NULL, '0.00'),
-(61, '8592', 55, NULL, NULL, NULL),
-(61, '8592', 56, 'werwer', NULL, '34.00'),
-(61, '8593', 57, NULL, NULL, NULL),
-(61, '8593', 58, 'dfgdfg', NULL, '45.00'),
-(61, '8594', 59, NULL, NULL, NULL),
-(61, '8595', 60, NULL, NULL, NULL),
-(61, '8595', 61, 'sdfsdf', NULL, '53.00'),
-(61, '8596', 62, NULL, NULL, NULL),
-(61, '8597', 63, NULL, NULL, NULL),
-(61, '8597', 64, 'xvxcv', NULL, '8.00'),
-(61, '8598', 65, NULL, NULL, NULL),
-(61, '8598', 66, 'werwer', NULL, '67.00'),
-(61, '8599', 67, NULL, NULL, NULL),
-(61, '8600', 68, NULL, NULL, NULL),
-(61, '8600', 69, 'vbdgg', NULL, '56.00'),
-(61, '8601', 70, NULL, NULL, NULL),
-(62, '8602', 71, NULL, NULL, NULL),
-(62, '8603', 72, NULL, NULL, NULL);
+(62, '8604', 73, NULL, NULL, NULL),
+(62, '8604', 74, 'asdasd', NULL, '44.00'),
+(62, '8619', 96, NULL, NULL, NULL),
+(63, '8620', 97, NULL, NULL, NULL),
+(63, '8621', 98, NULL, NULL, NULL),
+(0, '', 159, 'uyu', NULL, '34.00'),
+(0, '<br />\n<b>Notice</b>:  Undefined variable: osCodigo in <b>C:xampphtdocsfcaradmservicoexcluir.php</b> on line <b>39</b><br />\n', 168, 'Coisa de Nerd', NULL, '125.00'),
+(0, '', 169, 'Coisa de Nerd', NULL, '125.00'),
+(0, '<br />\n<b>Notice</b>:  Undefined variable: osCodigo in <b>C:xampphtdocsfcaradmservicoincluir.php</b> on line <b>74</b><br />\n', 184, 'ad', NULL, '34.00'),
+(0, '<br />\n<b>Notice</b>:  Undefined variable: osCodigo in <b>C:xampphtdocsfcaradmservicoincluir.php</b> on line <b>74</b><br />\n', 186, 'ad', NULL, '34.00'),
+(0, '', 189, 'ad', NULL, '34.00'),
+(66, '8674', 220, NULL, NULL, NULL),
+(66, '8675', 221, NULL, NULL, NULL),
+(66, '8676', 222, NULL, NULL, NULL),
+(66, '8677', 223, NULL, NULL, NULL),
+(66, '8678', 224, NULL, NULL, NULL),
+(66, '8622', 243, NULL, NULL, NULL),
+(66, '8623', 245, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1073,13 +1058,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- AUTO_INCREMENT for table `clientefile`
 --
 ALTER TABLE `clientefile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `clientez`
@@ -1133,7 +1118,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `ordserv`
 --
 ALTER TABLE `ordserv`
-  MODIFY `id` int(65) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(65) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT for table `organizar`
@@ -1145,7 +1130,7 @@ ALTER TABLE `organizar`
 -- AUTO_INCREMENT for table `osdetalhe`
 --
 ALTER TABLE `osdetalhe`
-  MODIFY `id_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
 -- AUTO_INCREMENT for table `parceria`
