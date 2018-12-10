@@ -1,8 +1,6 @@
 <?php
 	include('protect.php');
 	include('globais.php');
-	//include('conect.php');
-	//print_r($_SESSION);
  ?>
 <html>
 <head>
@@ -131,8 +129,10 @@
 					conteudo.load('clienteinserir.php');
 					});
 				jQuery('#clienteeditar').click(function(){
-					conteudo.load('clienteeditar.php');
-					});
+						conteudo.load('clienteeditar.php');
+						});
+
+
 			//Portal do Clientes
 				jQuery('#clientes').click(function(){
 					conteudo.load('clientes.php');
@@ -143,6 +143,9 @@
 				jQuery('#senha').click(function(){
 					conteudo.load('senha.php');
 					});
+				jQuery('#ordemservice').click(function(){
+							conteudo.load('ordemservice.php');
+							});
 			//Portal do Aluno
 						jQuery('#aluno').click(function(){
 							conteudo.load('aluno.php');
@@ -230,7 +233,7 @@
 
 <body>
 
-	<div class="lock topoblack no-print" style="background-color:black;">
+<div class="lock topoblack no-print" style="background-color:black;">
 	<div class="container" >
 		<div class="row" >
 			<div class="col-3 barblack">
@@ -287,6 +290,7 @@
 		 <div class="collapse" id="collapseclientes">
 						 <a class="btn btn-block btn-outline-secondary" id="clientes" style="margin-top:5px;"> Clientes</a>
 						 <a class="btn btn-block btn-outline-secondary" id="cadastrar" style="margin-top:5px;"> Cadastrar</a>
+						 <a class="btn btn-block btn-outline-secondary" id="ordemservice" style="margin-top:5px;">Ordem de Serviço</a>
 						 <a class="btn btn-block btn-outline-secondary" id="senha" style="display:none;margin-top:5px;"> Esqueceu Senha</a>
 		 </div>
 

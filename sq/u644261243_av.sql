@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Dez-2018 às 15:27
+-- Generation Time: 06-Dez-2018 às 18:49
 -- Versão do servidor: 10.1.36-MariaDB
 -- versão do PHP: 5.6.38
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `u644261243_av`
+-- Database: `u572850543_fc`
 --
 
 -- --------------------------------------------------------
@@ -85,6 +85,15 @@ CREATE TABLE `atuacao` (
   `hora` varchar(255) NOT NULL,
   `view` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `atuacao`
+--
+
+INSERT INTO `atuacao` (`id`, `img`, `titulo`, `descri`, `texto`, `data`, `hora`, `view`) VALUES
+(1, 'Software-Quality-Assurance-med.jpg', 'Alienação', 'Atualizar os dados cadastrais do veículo.', '', '05-12-2018', '10:05', 0),
+(2, 'Treinamento.jpg', 'Alteração de características', 'Automóveis: Cor, GNV, Tanque suplementar, Cara preta.  Motocicletas: Cor, carga.', '', '05-12-2018', '10:07', 0),
+(3, 'transito.jpg', 'Autorização para trânsito de veículo', 'Autorizar o proprietário do veículo a transitar, antes do emplacamento, de um Município ou Estado para outro.', '', '05-12-2018', '10:31', 0);
 
 -- --------------------------------------------------------
 
@@ -162,6 +171,8 @@ CREATE TABLE `carousel` (
   `id` int(255) NOT NULL,
   `banner` varchar(255) NOT NULL,
   `img` varchar(255) NOT NULL,
+  `titulo` varchar(255) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL,
   `link` varchar(255) NOT NULL,
   `ordem` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -170,11 +181,10 @@ CREATE TABLE `carousel` (
 -- Extraindo dados da tabela `carousel`
 --
 
-INSERT INTO `carousel` (`id`, `banner`, `img`, `link`, `ordem`) VALUES
-(0, 'Banner 0', '', '', '_self'),
-(1, 'Banner 1', 'banner-libras.png', '', '_self'),
-(2, 'Banner 2', 'banner-libras.png', '', '_self'),
-(3, 'Banner 3', 'banner-libras.png', '', '_self');
+INSERT INTO `carousel` (`id`, `banner`, `img`, `titulo`, `descricao`, `link`, `ordem`) VALUES
+(0, 'Banner 0', 'cartrack.jpg', 'Vistoria Veicular ', 'Trafegue com seu veículo vistoriado para sua segurança', '', '_self'),
+(1, 'Banner 1', 'viatura.jpg', 'Transferência de Município ', 'Transfira seu carro para o seu domicílio aqui, rapido e fácil...', '', '_self'),
+(2, 'Banner 2', 'segundo.jpg', 'Emplacamento', 'O melhor atendimento para o emplacamento de seu veículo.', '', '_self');
 
 -- --------------------------------------------------------
 
@@ -237,9 +247,7 @@ INSERT INTO `cliente` (`id`, `nome`, `email`, `celular`, `login`, `senha`, `rua`
 (61, 'Joanna Dark', '1', '1', '', '1', '1', '98756547DC', '1', 'cep', '1', '1', '', 'WhatsApp-Image-2018-09-17-at-22.15.37-400x450.jpeg', 0),
 (62, 'Maria do Carmo', '1', '75 91428548', 'login', '1', '1', '9798778954', '1', '1', '1', '1', '', 'avatar.jpg', 0),
 (63, 'Marileusa Oliveira dos Santos', '1', '1', '', '1', '1', '987987987987', '1', 'cep', '1', '1', '', 'avatar.jpg', 0),
-(64, 'José Farias de Azevedo', '1', '758697488', 'login', '1', '1', '87456987234', '1', '1', '1', '1', '', 'avatar.jpg', 0),
-(65, 'Mariposa Livre do Casulo', '1', '1', '', '1', '1', '758987585/0001-85', '1', 'cep', '1', '1', '', 'avatar.jpg', 0),
-(66, 'Escova de Cabelo Boa', '1', '75 98685.8757', 'login', '1', '1', '87589587458', '1', '1', '1', '1', '', 'avatar.jpg', 0);
+(64, 'Sergio Mota Oliveira', '1', '75 9142 9009', '', '1', '1', '97435902500', '1', 'cep', '1', '1', '', 'avatar.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -280,7 +288,8 @@ INSERT INTO `clientefile` (`id`, `nome`, `cargo`, `documento`, `view`, `obs`, `c
 (16, 'Identidade', '', 'Software-Quality-Assurance-med.jpg.jpeg', 0, 'obs', 58),
 (17, 'Identidade', '', '47117536_937768153088607_5495120770709323776_n.jpg.jpeg', 1, 'obs', 61),
 (18, 'cpf', '', '46977852_206613593574177_3558920441038897152_n.jpg.jpeg', 1, 'obs', 61),
-(19, 'errrrtrt', '', '14.jpg.jpeg', 0, 'obs', 63);
+(19, 'errrrtrt', '', '14.jpg.jpeg', 0, 'obs', 63),
+(20, 'RG', '', '44222058_192587234973393_6629792418109587456_n (1).jpg.jpeg', 0, 'obs', 63);
 
 -- --------------------------------------------------------
 
@@ -382,7 +391,7 @@ CREATE TABLE `edicao` (
 --
 
 INSERT INTO `edicao` (`id`, `atuacao`, `projeto`, `imagens`) VALUES
-(1, '66', '8623', '1');
+(1, 'Marileusa', '8590', '1');
 
 -- --------------------------------------------------------
 
@@ -467,12 +476,10 @@ CREATE TABLE `ordserv` (
 
 INSERT INTO `ordserv` (`id`, `id_us`, `data_origem`, `cod_os`, `placa`, `marca`, `cor`, `renavan`, `proprietario`, `telefone`) VALUES
 (1, 61, '29/11/2018', '8586', 'JYC6892', 'Celta Wind', 'Cinza', '789846542324', 'Sérgio Mota Oliveira', '75 991429009'),
-(36, 62, '02/12/2018', '8604', NULL, NULL, NULL, NULL, 'Maria do Carmo', '75 91428548'),
-(51, 62, '03/12/2018', '8619', NULL, NULL, NULL, NULL, 'Maria do Carmo', '75 91428548'),
-(52, 63, '03/12/2018', '8620', NULL, NULL, NULL, NULL, 'Marileusa Oliveira dos Santos', '1'),
-(53, 63, '03/12/2018', '8621', NULL, NULL, NULL, NULL, 'Marileusa Oliveira dos Santos', '1'),
-(116, 66, '03/12/2018', '8622', NULL, NULL, NULL, NULL, 'Escova de Cabelo Boa', '75 98685.8757'),
-(118, 66, '03/12/2018', '8623', NULL, NULL, NULL, NULL, 'Escova de Cabelo Boa', '75 98685.8757');
+(212, 60, '05/12/2018', '8587', 'Placa', 'Marca', 'Cor', 'Renavan', 'Maria Mota Xaviers', '1'),
+(251, 63, '06/12/2018', '8589', 'FTO8587', 'Sedan', 'Verde', '654321743', 'Marileusa Oliveira dos Santos', '987987987987'),
+(256, 63, '06/12/2018', '8590', 'XDE 5478', 'FOX', 'Azul', '654987561365', 'Marileusa Oliveira dos Santos', '987987987987'),
+(257, 62, '06/12/2018', '8591', 'XDL 5857', 'FOX', 'Azul', '65498789', 'Maria do Carmo', '9798778954');
 
 -- --------------------------------------------------------
 
@@ -522,24 +529,37 @@ CREATE TABLE `osdetalhe` (
 INSERT INTO `osdetalhe` (`id_us`, `cod_os`, `id_serv`, `servico`, `quantidade`, `valor`) VALUES
 (61, '8586', 3, 'Serviço 3', NULL, '20.00'),
 (61, '8586', 17, 'wqerwer', NULL, '33.00'),
-(62, '8604', 73, NULL, NULL, NULL),
-(62, '8604', 74, 'asdasd', NULL, '44.00'),
-(62, '8619', 96, NULL, NULL, NULL),
-(63, '8620', 97, NULL, NULL, NULL),
-(63, '8621', 98, NULL, NULL, NULL),
-(0, '', 159, 'uyu', NULL, '34.00'),
-(0, '<br />\n<b>Notice</b>:  Undefined variable: osCodigo in <b>C:xampphtdocsfcaradmservicoexcluir.php</b> on line <b>39</b><br />\n', 168, 'Coisa de Nerd', NULL, '125.00'),
-(0, '', 169, 'Coisa de Nerd', NULL, '125.00'),
-(0, '<br />\n<b>Notice</b>:  Undefined variable: osCodigo in <b>C:xampphtdocsfcaradmservicoincluir.php</b> on line <b>74</b><br />\n', 184, 'ad', NULL, '34.00'),
-(0, '<br />\n<b>Notice</b>:  Undefined variable: osCodigo in <b>C:xampphtdocsfcaradmservicoincluir.php</b> on line <b>74</b><br />\n', 186, 'ad', NULL, '34.00'),
-(0, '', 189, 'ad', NULL, '34.00'),
-(66, '8674', 220, NULL, NULL, NULL),
-(66, '8675', 221, NULL, NULL, NULL),
-(66, '8676', 222, NULL, NULL, NULL),
-(66, '8677', 223, NULL, NULL, NULL),
-(66, '8678', 224, NULL, NULL, NULL),
-(66, '8622', 243, NULL, NULL, NULL),
-(66, '8623', 245, NULL, NULL, NULL);
+(60, '8587', 423, NULL, NULL, NULL),
+(0, '', 537, '', NULL, '0.00'),
+(0, '', 538, '', NULL, '0.00'),
+(0, '', 539, '', NULL, '0.00'),
+(0, '', 540, '', NULL, '0.00'),
+(0, '', 541, '', NULL, '0.00'),
+(0, '', 542, '', NULL, '0.00'),
+(0, '', 543, '', NULL, '0.00'),
+(0, '', 544, '', NULL, '0.00'),
+(0, '', 545, '', NULL, '0.00'),
+(0, '', 546, '', NULL, '0.00'),
+(0, '', 547, '', NULL, '0.00'),
+(0, '', 548, '', NULL, '0.00'),
+(0, '', 549, '', NULL, '0.00'),
+(0, '', 550, '', NULL, '0.00'),
+(0, '', 551, '', NULL, '0.00'),
+(0, '', 552, '', NULL, '0.00'),
+(0, '', 553, '', NULL, '0.00'),
+(0, '', 554, '', NULL, '0.00'),
+(0, '', 555, '', NULL, '0.00'),
+(0, '', 556, '', NULL, '0.00'),
+(0, '', 557, '', NULL, '0.00'),
+(63, '8589', 564, 'Transferencia de Nome', NULL, '146.00'),
+(63, '8589', 566, 'Taxa Sindicato', NULL, '15.00'),
+(63, '8590', 581, 'Taxa Sindical', NULL, '15.00'),
+(63, '8590', 583, 'Honorários', NULL, '60.00'),
+(63, '8590', 584, 'Transferência de Município', NULL, '92.00'),
+(63, '8590', 585, 'Selo', NULL, '36.00'),
+(63, '8590', 586, 'Transferencia de Nome', NULL, '146.00'),
+(62, '8591', 592, 'Taxa', NULL, '56.00'),
+(62, '8591', 593, 'Web', NULL, '85.00');
 
 -- --------------------------------------------------------
 
@@ -733,7 +753,7 @@ CREATE TABLE `quemsomos` (
 --
 
 INSERT INTO `quemsomos` (`id`, `img`, `titulo`, `descri`, `texto`, `data`, `hora`, `view`) VALUES
-(1, 'ibantec.png', 'Quem Somos', '', '<p>&nbsp;</p>\r\n<h5>&nbsp;</h5>', 'data', 'hora', 1);
+(1, 'fcar.png', 'A Empresa', '', '<p>A FCar Emplacamentos &eacute; especializada na presta&ccedil;&atilde;o de servi&ccedil;os documentais junto ao DETRAN, al&eacute;m de ajudar com efici&ecirc;ncia aos seus clientes orienta adequadamente os demais servi&ccedil;os que precisam.</p>\r\n<p>&nbsp;</p>\r\n<p>A FCar Emplacamentos por se preocupar com a qualidade e atendimento, avalia e analiza suas necessidades com o objetivo de oferecer um atendimento diferenciado, focando na rapidez, efici&ecirc;ncia e excel&ecirc;ncia de seus servi&ccedil;os. A ag&ecirc;ncia disponibiliza uma presta&ccedil;&atilde;o de servi&ccedil;o respons&aacute;vel oferecendo para seus clientes total seguran&ccedil;a e transpar&ecirc;ncia. Os nossos profissionais disp&otilde;em de fardamento e crach&aacute; de identifica&ccedil;&atilde;o al&eacute;m de estarem profissionalmente qualificados eefici&ecirc;ntes.</p>\r\n<p>&nbsp;</p>\r\n<p>A FCar foi constitu&iacute;da com base na necessidade de um servi&ccedil;o especializado que pudesse oferecer seguran&ccedil;a na contrata&ccedil;&atilde;o e comodidade, evitando assim problemas e permitindo assim que seus clientes tenham total confian&ccedil;a. Executamos servi&ccedil;os documentais de emplacamento, transferencia de nome, de munic&iacute;pio, pesquisas, 2&ordf; Via Licenciamento, Vistorias e outras listadas em nossos servi&ccedil;os, logo abaixo aqui no site. Todo o foco de nossa atua&ccedil;&atilde;o &eacute; atendendo assim a necessidade de cada cliente com excel&ecirc;ncia.</p>\r\n<h5>&nbsp;</h5>', 'data', 'hora', 1);
 
 -- --------------------------------------------------------
 
@@ -1022,7 +1042,7 @@ ALTER TABLE `alunofile`
 -- AUTO_INCREMENT for table `atuacao`
 --
 ALTER TABLE `atuacao`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `banerlateral`
@@ -1046,7 +1066,7 @@ ALTER TABLE `bannerfixoint`
 -- AUTO_INCREMENT for table `carousel`
 --
 ALTER TABLE `carousel`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categorias`
@@ -1058,13 +1078,13 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `clientefile`
 --
 ALTER TABLE `clientefile`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `clientez`
@@ -1118,7 +1138,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `ordserv`
 --
 ALTER TABLE `ordserv`
-  MODIFY `id` int(65) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(65) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=263;
 
 --
 -- AUTO_INCREMENT for table `organizar`
@@ -1130,7 +1150,7 @@ ALTER TABLE `organizar`
 -- AUTO_INCREMENT for table `osdetalhe`
 --
 ALTER TABLE `osdetalhe`
-  MODIFY `id_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
+  MODIFY `id_serv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=609;
 
 --
 -- AUTO_INCREMENT for table `parceria`
